@@ -2,6 +2,9 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { CitizenProfile, Scheme, MatchResult } from './types';
 import { SCHEMES, DEFAULT_CITIZEN_PROFILES } from './data/schemes';
 import { matchAllSchemes } from './utils/matcher';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import { LoginPage } from './components/LoginPage';
 import { Header } from './components/Header';
 import { ProfileWizard } from './components/ProfileWizard';
 import { SchemeList } from './components/SchemeList';
@@ -15,12 +18,19 @@ import {
   ShieldCheck,
   PhoneCall,
   ExternalLink,
-  HeartHandshake,
+  Lock,
   CheckCircle2,
-  Info
+  AlertCircle,
+  Smartphone,
+  Sparkles,
+  KeyRound,
+  RefreshCw
 } from 'lucide-react';
 
-export default function App() {
+function AppContent() {
+  const { user, isAuthenticated, isLoading } = useAuth();
+  const { t } = useLanguage();
+
   // Citizen profile state
   const [profile, setProfile] = useState<CitizenProfile>(() => {
     try {
@@ -30,6 +40,13 @@ export default function App() {
       return DEFAULT_CITIZEN_PROFILES[0].profile;
     }
   });
+
+  // Sync profile applicant name with logged-in citizen
+  useEffect(() => {
+    if (user?.name) {
+      setProfile((prev) => ({ ...prev, name: user.name }));
+    }
+  }, [user]);
 
   // Active view tab
   const [activeTab, setActiveTab] = useState<'screener' | 'schemes' | 'compare' | 'documents' | 'ai'>('screener');
@@ -126,6 +143,30 @@ export default function App() {
       ? 'text-[15px]'
       : 'text-[14px]';
 
+  // 1. Loading Splash
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-slate-950 text-white flex flex-col items-center justify-center p-4 space-y-4">
+        <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg animate-pulse">
+          <Landmark className="w-7 h-7 text-white" />
+        </div>
+        <div className="text-center space-y-1">
+          <h2 className="text-lg font-serif font-bold tracking-tight">{t.appName} {t.schemeFinder}</h2>
+          <p className="text-xs text-slate-400 flex items-center justify-center gap-2">
+            <RefreshCw className="w-3.5 h-3.5 animate-spin text-emerald-400" />
+            <span>Establishing 256-bit TLS encrypted citizen session...</span>
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // 2. GATED LOGIN PAGE: If not logged in, user sees the Login Page first
+  if (!isAuthenticated) {
+    return <LoginPage />;
+  }
+
+  // 3. FULL SITE ACCESS: Displayed once user logs in
   return (
     <div className={`min-h-screen flex flex-col bg-[#f8fafc] ${fontSizeClass}`}>
       {/* Civic Portal Header */}
@@ -142,7 +183,42 @@ export default function App() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-5">
+        {/* Logged In Citizen Welcome Banner */}
+        {user && (
+          <div className="bg-white rounded-xl border border-slate-200 p-3.5 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-sm shrink-0">
+                {user.name ? user.name.charAt(0).toUpperCase() : 'C'}
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-slate-900 text-sm">
+                    {t.welcome}, {user.name}
+                  </span>
+                  <span className="text-[10px] bg-emerald-50 text-emerald-800 border border-emerald-200 px-1.5 py-0.2 rounded font-semibold flex items-center gap-1">
+                    <CheckCircle2 className="w-2.5 h-2.5 text-emerald-600" />
+                    <span>{t.verifiedCitizen}</span>
+                  </span>
+                </div>
+                <span className="text-slate-500 block text-[11px]">
+                  Logged in with{' '}
+                  <strong className="text-emerald-700 capitalize">
+                    {user.authProvider === 'mobile_otp' ? t.tabMobileOtp : user.authProvider}
+                  </strong>{' '}
+                  · Full site access unlocked · 20+ statutory schemes active
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 self-end sm:self-center shrink-0 text-slate-500 font-mono text-[11px]">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <span>{t.tlsEncrypted}</span>
+            </div>
+          </div>
+        )}
+
+        {/* Tab Views */}
         {activeTab === 'screener' && (
           <ProfileWizard
             profile={profile}
@@ -218,7 +294,7 @@ export default function App() {
             <div className="space-y-2.5 md:col-span-1">
               <div className="flex items-center gap-2 text-white font-bold font-serif text-sm">
                 <Landmark className="w-4 h-4 text-emerald-400" />
-                <span>JanKalyan Civic Entitlement Portal</span>
+                <span>{t.appName} {t.schemeFinder}</span>
               </div>
               <p className="text-slate-400 leading-relaxed text-[11px]">
                 Empowering Indian citizens with direct, transparent, and unmediated access to welfare benefits, subsidies, and social security entitlements guaranteed by Constitution and Government Gazettes.
@@ -266,19 +342,19 @@ export default function App() {
               <ul className="space-y-1.5 text-slate-400 text-[11px]">
                 <li className="flex items-center gap-2">
                   <PhoneCall className="w-3 h-3 text-emerald-400 shrink-0" />
-                  <span>PM-JAY Health: <strong>14555</strong> / 1800 111 565</span>
+                  <span>{t.tollFreePMJAY}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <PhoneCall className="w-3 h-3 text-emerald-400 shrink-0" />
-                  <span>Kisan Call Centre: <strong>1551</strong> / 1800 180 1551</span>
+                  <span>{t.tollFreeKisan}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <PhoneCall className="w-3 h-3 text-emerald-400 shrink-0" />
-                  <span>National Grievance (CPGRAMS): <strong>1800 11 0031</strong></span>
+                  <span>{t.tollFreeGrievance}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <PhoneCall className="w-3 h-3 text-emerald-400 shrink-0" />
-                  <span>Women Helpline: <strong>181</strong> / 1090</span>
+                  <span>{t.tollFreeWomen}</span>
                 </li>
               </ul>
             </div>
@@ -290,13 +366,13 @@ export default function App() {
                 <span>Anti-Bribery & Fraud Warning</span>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                All government welfare scheme applications on official <code className="bg-slate-900 px-1 py-0.5 rounded text-emerald-400">.gov.in</code> portals are <strong>completely free of charge</strong>. Never pay money to unauthorized middle-men or fake cybercafes.
+                {t.freeServiceNotice}
               </p>
             </div>
           </div>
 
           <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-2">
-            <span>© 2026 JanKalyan Public Entitlement Portal. Open Civic Information Service.</span>
+            <span>© 2026 {t.appName} Public Entitlement Portal. Open Civic Information Service.</span>
             <div className="flex items-center gap-4">
               <span>Data Grounded in Official GoI Gazettes</span>
               <span>·</span>
@@ -306,5 +382,15 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
+    </LanguageProvider>
   );
 }

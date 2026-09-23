@@ -22,6 +22,20 @@ export type RationCardType = 'None' | 'AAY (Antyodaya)' | 'BPL (Priority)' | 'AP
 
 export type HousingType = 'Kutcha / Mud House' | 'Semi-Pucca' | 'Pucca' | 'Rented' | 'Homeless';
 
+export interface CitizenUser {
+  id: string;
+  name: string;
+  email?: string;
+  phone?: string;
+  authProvider: 'google' | 'email' | 'mobile_otp';
+  avatarUrl?: string;
+  isAadhaarLinked: boolean;
+  isPhoneVerified: boolean;
+  isEmailVerified: boolean;
+  createdAt: string;
+  lastLoginAt: string;
+}
+
 export interface CitizenProfile {
   name: string;
   age: number;

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { MatchResult, Scheme, SchemeCategory } from '../types';
 import { SchemeCard } from './SchemeCard';
+import { useLanguage } from '../context/LanguageContext';
 import {
   Search,
   Filter,
@@ -31,6 +32,7 @@ export const SchemeList: React.FC<SchemeListProps> = ({
   onToggleCompare,
   onGoToScreener,
 }) => {
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [statusFilter, setStatusFilter] = useState<'all' | 'eligible' | 'conditional' | 'ineligible' | 'bookmarked'>('all');
@@ -118,7 +120,7 @@ export const SchemeList: React.FC<SchemeListProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search scheme name, ministry, keyword (e.g. Kisan, Awas, Solar, Loan, Girl child)..."
+              placeholder={t.searchPlaceholder}
               className="w-full text-xs pl-9 pr-8 py-2 rounded-lg border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
             {searchQuery && (
@@ -135,15 +137,15 @@ export const SchemeList: React.FC<SchemeListProps> = ({
           {/* Sort By Dropdown */}
           <div className="flex items-center gap-2 text-xs shrink-0">
             <ArrowUpDown className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-slate-500 hidden sm:inline">Sort:</span>
+            <span className="text-slate-500 hidden sm:inline">{t.sortLabel}:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
               className="text-xs border border-slate-200 rounded-lg px-2.5 py-2 text-slate-800 bg-slate-50 focus:outline-none focus:ring-1 focus:ring-emerald-500 cursor-pointer"
             >
-              <option value="match">Highest Eligibility Match</option>
-              <option value="value">Highest Financial Entitlement</option>
-              <option value="name">Alphabetical (A to Z)</option>
+              <option value="match">{t.sortHighestMatch}</option>
+              <option value="value">{t.sortHighestValue}</option>
+              <option value="name">{t.sortAlphabetical}</option>
             </select>
           </div>
         </div>
@@ -159,7 +161,7 @@ export const SchemeList: React.FC<SchemeListProps> = ({
                 : 'bg-slate-100 text-slate-600 hover:text-slate-900'
             }`}
           >
-            <span>All Programs</span>
+            <span>{t.filterAll}</span>
             <span className="text-[11px] opacity-80">({counts.all})</span>
           </button>
 
@@ -173,7 +175,7 @@ export const SchemeList: React.FC<SchemeListProps> = ({
             }`}
           >
             <CheckCircle2 className="w-3.5 h-3.5" />
-            <span>100% Eligible</span>
+            <span>{t.filterEligible}</span>
             <span className="text-[11px] opacity-80">({counts.eligible})</span>
           </button>
 
@@ -187,7 +189,7 @@ export const SchemeList: React.FC<SchemeListProps> = ({
             }`}
           >
             <AlertTriangle className="w-3.5 h-3.5" />
-            <span>Conditionally Eligible</span>
+            <span>{t.filterConditional}</span>
             <span className="text-[11px] opacity-80">({counts.conditional})</span>
           </button>
 
@@ -197,10 +199,10 @@ export const SchemeList: React.FC<SchemeListProps> = ({
             className={`px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer ${
               statusFilter === 'ineligible'
                 ? 'bg-slate-700 text-white font-semibold shadow-xs'
-                : 'bg-slate-100 text-slate-600 hover:text-slate-900'
+                : 'bg-slate-100 text-slate-500 hover:text-slate-700'
             }`}
           >
-            <span>Ineligible</span>
+            <span>{t.filterIneligible}</span>
             <span className="text-[11px] opacity-80">({counts.ineligible})</span>
           </button>
 
@@ -214,7 +216,7 @@ export const SchemeList: React.FC<SchemeListProps> = ({
             }`}
           >
             <Bookmark className="w-3.5 h-3.5" />
-            <span>Saved</span>
+            <span>{t.filterSaved}</span>
             <span className="text-[11px] opacity-80">({counts.bookmarked})</span>
           </button>
         </div>

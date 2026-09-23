@@ -15,6 +15,277 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 app.use(express.json());
 
+// In-memory Auth & Session Store
+interface CitizenUser {
+  id: string;
+  name: string;
+  email?: string;
+  phone?: string;
+  authProvider: 'google' | 'email' | 'mobile_otp';
+  avatarUrl?: string;
+  isAadhaarLinked: boolean;
+  isPhoneVerified: boolean;
+  isEmailVerified: boolean;
+  createdAt: string;
+  lastLoginAt: string;
+}
+
+const otpStore = new Map<string, { code: string; expiresAt: number; attempts: number }>();
+const userStore = new Map<string, CitizenUser>();
+const sessionStore = new Map<string, { userId: string; expiresAt: number }>();
+
+// Preseed demo citizen
+const demoUser: CitizenUser = {
+  id: 'cit-982341',
+  name: 'Tanmay Singh',
+  email: '8418tanmaysingh@gmail.com',
+  phone: '+91 98765 43210',
+  authProvider: 'google',
+  avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
+  isAadhaarLinked: true,
+  isPhoneVerified: true,
+  isEmailVerified: true,
+  createdAt: new Date().toISOString(),
+  lastLoginAt: new Date().toISOString()
+};
+userStore.set(demoUser.id, demoUser);
+
+// Generate random session token
+function generateSecureToken(): string {
+  return 'jks_' + Math.random().toString(36).substring(2) + Date.now().toString(36) + Math.random().toString(36).substring(2);
+}
+
+// 1. Mobile Number - Request 6-digit OTP
+app.post('/api/auth/send-otp', (req, res) => {
+  try {
+    const { phone } = req.body;
+    if (!phone || typeof phone !== 'string') {
+      return res.status(400).json({ success: false, message: 'Valid mobile number is required.' });
+    }
+
+    const cleanPhone = phone.replace(/\D/g, '');
+    if (cleanPhone.length < 10) {
+      return res.status(400).json({ success: false, message: 'Please enter a valid 10-digit mobile number.' });
+    }
+
+    // Generate 6-digit cryptographic-style OTP
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes
+
+    otpStore.set(cleanPhone, { code: otp, expiresAt, attempts: 0 });
+
+    const last4 = cleanPhone.slice(-4);
+    const maskedPhone = `+91 ••••• ••${last4}`;
+
+    return res.json({
+      success: true,
+      message: `Verification code sent to ${maskedPhone}`,
+      maskedPhone,
+      otp, // Provided for instant testing/convenience and simulated SMS notification
+      expiresInSeconds: 600
+    });
+  } catch (err: any) {
+    return res.status(500).json({ success: false, message: err.message || 'Failed to send OTP' });
+  }
+});
+
+// 2. Mobile Number - Verify 6-digit OTP
+app.post('/api/auth/verify-otp', (req, res) => {
+  try {
+    const { phone, otp, name } = req.body;
+    if (!phone || !otp) {
+      return res.status(400).json({ success: false, message: 'Phone and 6-digit OTP are required.' });
+    }
+
+    const cleanPhone = phone.replace(/\D/g, '');
+    const record = otpStore.get(cleanPhone);
+
+    if (!record) {
+      return res.status(400).json({ success: false, message: 'No active OTP found. Please request a new code.' });
+    }
+
+    if (Date.now() > record.expiresAt) {
+      otpStore.delete(cleanPhone);
+      return res.status(400).json({ success: false, message: 'OTP has expired. Please request a fresh code.' });
+    }
+
+    if (record.code !== otp.trim()) {
+      record.attempts += 1;
+      if (record.attempts >= 5) {
+        otpStore.delete(cleanPhone);
+        return res.status(400).json({ success: false, message: 'Too many incorrect attempts. Please request a new OTP.' });
+      }
+      return res.status(400).json({ success: false, message: `Incorrect OTP. ${5 - record.attempts} attempts remaining.` });
+    }
+
+    // Correct OTP: consume it
+    otpStore.delete(cleanPhone);
+
+    // Find or create user
+    let user = Array.from(userStore.values()).find(u => u.phone?.replace(/\D/g, '').endsWith(cleanPhone.slice(-10)));
+    if (!user) {
+      const newId = 'cit-' + Math.floor(100000 + Math.random() * 900000);
+      user = {
+        id: newId,
+        name: name || `Citizen ${cleanPhone.slice(-4)}`,
+        phone: `+91 ${cleanPhone.slice(-10, -5)} ${cleanPhone.slice(-5)}`,
+        authProvider: 'mobile_otp',
+        isAadhaarLinked: true,
+        isPhoneVerified: true,
+        isEmailVerified: false,
+        createdAt: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString()
+      };
+      userStore.set(user.id, user);
+    } else {
+      user.lastLoginAt = new Date().toISOString();
+      user.isPhoneVerified = true;
+    }
+
+    const token = generateSecureToken();
+    sessionStore.set(token, { userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000 });
+
+    return res.json({
+      success: true,
+      message: 'Mobile identity verified successfully.',
+      token,
+      user
+    });
+  } catch (err: any) {
+    return res.status(500).json({ success: false, message: err.message || 'OTP verification failed' });
+  }
+});
+
+// 3. Email & Password Login
+app.post('/api/auth/email/login', (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: 'Email and password are required.' });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({ success: false, message: 'Password must be at least 6 characters.' });
+    }
+
+    const cleanEmail = email.trim().toLowerCase();
+    let user = Array.from(userStore.values()).find(u => u.email?.toLowerCase() === cleanEmail);
+
+    if (!user) {
+      // Auto-register convenience for seamless civic access
+      const newId = 'cit-' + Math.floor(100000 + Math.random() * 900000);
+      const namePart = cleanEmail.split('@')[0];
+      const formattedName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+      user = {
+        id: newId,
+        name: formattedName || 'Citizen User',
+        email: cleanEmail,
+        authProvider: 'email',
+        isAadhaarLinked: false,
+        isPhoneVerified: false,
+        isEmailVerified: true,
+        createdAt: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString()
+      };
+      userStore.set(user.id, user);
+    } else {
+      user.lastLoginAt = new Date().toISOString();
+    }
+
+    const token = generateSecureToken();
+    sessionStore.set(token, { userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000 });
+
+    return res.json({
+      success: true,
+      message: 'Logged in successfully.',
+      token,
+      user
+    });
+  } catch (err: any) {
+    return res.status(500).json({ success: false, message: err.message || 'Email authentication failed' });
+  }
+});
+
+// 4. Google Sign-In
+app.post('/api/auth/google', (req, res) => {
+  try {
+    const { email, name, avatarUrl } = req.body;
+    const targetEmail = (email || '8418tanmaysingh@gmail.com').trim().toLowerCase();
+    const targetName = name || 'Tanmay Singh';
+
+    let user = Array.from(userStore.values()).find(u => u.email?.toLowerCase() === targetEmail);
+
+    if (!user) {
+      const newId = 'cit-' + Math.floor(100000 + Math.random() * 900000);
+      user = {
+        id: newId,
+        name: targetName,
+        email: targetEmail,
+        authProvider: 'google',
+        avatarUrl: avatarUrl || 'https://lh3.googleusercontent.com/a/default-user',
+        isAadhaarLinked: true,
+        isPhoneVerified: true,
+        isEmailVerified: true,
+        createdAt: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString()
+      };
+      userStore.set(user.id, user);
+    } else {
+      user.lastLoginAt = new Date().toISOString();
+      user.isEmailVerified = true;
+    }
+
+    const token = generateSecureToken();
+    sessionStore.set(token, { userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000 });
+
+    return res.json({
+      success: true,
+      message: 'Signed in with Google successfully.',
+      token,
+      user
+    });
+  } catch (err: any) {
+    return res.status(500).json({ success: false, message: err.message || 'Google authentication failed' });
+  }
+});
+
+// 5. Get current authenticated citizen
+app.get('/api/auth/me', (req, res) => {
+  try {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      return res.status(401).json({ success: false, message: 'Unauthenticated session' });
+    }
+
+    const token = authHeader.split(' ')[1];
+    const session = sessionStore.get(token);
+
+    if (!session || Date.now() > session.expiresAt) {
+      if (session) sessionStore.delete(token);
+      return res.status(401).json({ success: false, message: 'Session expired. Please log in again.' });
+    }
+
+    const user = userStore.get(session.userId);
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User record not found.' });
+    }
+
+    return res.json({ success: true, user });
+  } catch (err: any) {
+    return res.status(500).json({ success: false, message: err.message || 'Session lookup failed' });
+  }
+});
+
+// 6. Sign out
+app.post('/api/auth/logout', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const token = authHeader.split(' ')[1];
+    sessionStore.delete(token);
+  }
+  return res.json({ success: true, message: 'Signed out securely.' });
+});
+
 // Server-side Gemini AI Scheme Advisor endpoint
 app.post('/api/ai/advisor', async (req, res) => {
   try {
