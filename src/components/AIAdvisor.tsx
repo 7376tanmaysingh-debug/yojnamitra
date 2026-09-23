@@ -67,9 +67,18 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ profile, matchedResults })
       let answer = '';
 
       if (response.ok && contentType.includes('application/json')) {
-        const data = await response.json();
-        answer = data.analysis || data.message || 'Unable to generate response. Please try again.';
-      } else {
+        try {
+          const text = await response.text();
+          if (text && text.trim().startsWith('{')) {
+            const data = JSON.parse(text);
+            answer = data.analysis || data.message || '';
+          }
+        } catch {
+          // ignore JSON parse failure
+        }
+      }
+
+      if (!answer) {
         // Fallback civic analysis for static hosting (Vercel / GitHub Pages)
         answer = `### 🏛️ Official Welfare Entitlement Assessment
 
