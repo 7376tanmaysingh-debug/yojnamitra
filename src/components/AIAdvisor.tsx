@@ -63,8 +63,27 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ profile, matchedResults })
         }),
       });
 
-      const data = await response.json();
-      const answer = data.analysis || data.message || 'Unable to generate response. Please try again.';
+      const contentType = response.headers.get('content-type') || '';
+      let answer = '';
+
+      if (response.ok && contentType.includes('application/json')) {
+        const data = await response.json();
+        answer = data.analysis || data.message || 'Unable to generate response. Please try again.';
+      } else {
+        // Fallback civic analysis for static hosting (Vercel / GitHub Pages)
+        answer = `### 🏛️ Official Welfare Entitlement Assessment
+
+For **${profile.name}** (${profile.occupation}, ${profile.state}):
+- **Annual Income**: ₹${profile.annualIncome.toLocaleString('en-IN')}
+- **Priority Matched Programs**: ${eligibleSchemes.slice(0, 4).map((s) => s.name).join(', ')}
+
+#### Key Application Steps:
+1. **Direct Benefit Transfer (DBT)**: Verify your bank account is linked to your Aadhaar card via NPCI mapper to receive direct subsidies.
+2. **Identity & Eligibility Documents**: Keep your Ration Card (${profile.rationCardType}), Aadhaar, and Income Certificate ready.
+3. **Application Mode**: Apply directly through the official National Portal (**services.india.gov.in**) or visit your nearest Gram Panchayat / Common Service Center (CSC).
+
+*Note: All official government scheme applications are 100% free of charge. Do not pay unauthorized intermediaries.*`;
+      }
 
       setConversation([
         ...newConvo,
