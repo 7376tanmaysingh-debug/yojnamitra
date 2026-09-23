@@ -1,0 +1,6 @@
+{
+  "name": "JanKalyan - Government Scheme Eligibility Finder",
+  "description": "Citizen-first entitlement screener and eligibility finder. Check qualification for central & state welfare schemes, calculate direct benefit values, inspect required documents, and get personalized application guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
