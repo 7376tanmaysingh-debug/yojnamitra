@@ -10,7 +10,8 @@ import {
   AlertTriangle,
   Bookmark,
   SlidersHorizontal,
-  X
+  X,
+  Globe
 } from 'lucide-react';
 
 interface SchemeListProps {
@@ -21,6 +22,7 @@ interface SchemeListProps {
   compareList: string[];
   onToggleCompare: (schemeId: string) => void;
   onGoToScreener: () => void;
+  onOpenPortalsDirectory?: () => void;
 }
 
 export const SchemeList: React.FC<SchemeListProps> = ({
@@ -31,6 +33,7 @@ export const SchemeList: React.FC<SchemeListProps> = ({
   compareList,
   onToggleCompare,
   onGoToScreener,
+  onOpenPortalsDirectory,
 }) => {
   const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
@@ -202,6 +205,17 @@ export const SchemeList: React.FC<SchemeListProps> = ({
           >
             📚 Education Schemes
           </button>
+
+          {onOpenPortalsDirectory && (
+            <button
+              type="button"
+              onClick={onOpenPortalsDirectory}
+              className="ml-auto flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-600 text-white shadow-xs transition-colors cursor-pointer"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>Official Portals & Links Hub ↗</span>
+            </button>
+          )}
         </div>
 
         {/* Status Segmented Control (Interactive buttons) */}

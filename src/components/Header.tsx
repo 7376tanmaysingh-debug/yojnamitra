@@ -29,6 +29,7 @@ interface HeaderProps {
   bookmarksCount: number;
   onSelectPersona: (profile: CitizenProfile) => void;
   onOpenPrint: () => void;
+  onOpenPortalsDirectory?: () => void;
   fontSize: 'normal' | 'large' | 'xlarge';
   setFontSize: (size: 'normal' | 'large' | 'xlarge') => void;
 }
@@ -41,6 +42,7 @@ export const Header: React.FC<HeaderProps> = ({
   bookmarksCount,
   onSelectPersona,
   onOpenPrint,
+  onOpenPortalsDirectory,
   fontSize,
   setFontSize,
 }) => {
@@ -336,6 +338,18 @@ export const Header: React.FC<HeaderProps> = ({
           <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>{t.tabAI}</span>
         </button>
+
+        {onOpenPortalsDirectory && (
+          <button
+            type="button"
+            onClick={onOpenPortalsDirectory}
+            className="ml-auto my-auto py-1 px-3 rounded-lg bg-emerald-800/50 hover:bg-emerald-700/80 border border-emerald-600/50 text-emerald-300 hover:text-white flex items-center gap-1.5 whitespace-nowrap transition-colors text-xs font-semibold cursor-pointer shrink-0 shadow-xs"
+            title="Open Directory of Official Portals, Scholarships, Internships and Direct Links"
+          >
+            <Globe className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Official Portals & Links Hub</span>
+          </button>
+        )}
       </div>
     </header>
   );

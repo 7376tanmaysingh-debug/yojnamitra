@@ -33,12 +33,43 @@ export const SCHEMES: Scheme[] = [
       maxAnnualIncome: 250000,
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Identity & Biometric verification', issuer: 'UIDAI', mandatory: true },
-      { id: 'ration-card', name: 'Ration Card (NFSA / BPL / Antyodaya)', purpose: 'Family roster and deprivation verification', issuer: 'State Food & Civil Supplies Dept', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Identity & Biometric verification', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
+      { id: 'ration-card', name: 'Ration Card (NFSA / BPL / Antyodaya)', purpose: 'Family roster and deprivation verification', issuer: 'State Food & Civil Supplies Dept', mandatory: true, downloadUrl: 'https://nfsa.gov.in/' },
       { id: 'mobile', name: 'Active Mobile Number', purpose: 'OTP generation for PMJAY Golden Card', issuer: 'Telecom Operator', mandatory: true }
     ],
     applicationMode: 'CSC / Common Service Center',
     applicationUrl: 'https://beneficiary.nha.gov.in/',
+    helplineNumber: '14555 (Toll-Free National Health Helpline)',
+    officialLinks: [
+          {
+                "title": "NHA Beneficiary Portal (Check Eligibility & e-KYC)",
+                "url": "https://beneficiary.nha.gov.in/",
+                "type": "apply",
+                "badge": "Direct Portal",
+                "description": "Instant Aadhaar OTP / Biometric e-KYC and download Ayushman PVC Card"
+          },
+          {
+                "title": "Find Empaneled Cashless Hospitals Near You",
+                "url": "https://hospitals.pmjay.gov.in/",
+                "type": "portal",
+                "badge": "Hospital Directory",
+                "description": "Search 29,000+ government and private network hospitals across India"
+          },
+          {
+                "title": "Ayushman App (Official Android App)",
+                "url": "https://play.google.com/store/apps/details?id=com.beneficiaryapp",
+                "type": "portal",
+                "badge": "Mobile App",
+                "description": "Generate Ayushman Bharat health card directly on smartphone"
+          },
+          {
+                "title": "PM-JAY Official Benefit Guidelines & Treatment Packages",
+                "url": "https://pmjay.gov.in/sites/default/files/2018-09/Guidelines_on_Processes_for_Empanelment_of_Hospitals.pdf",
+                "type": "guidelines",
+                "badge": "PDF Manual",
+                "description": "1,949 medical procedures and complete hospitalization rules"
+          }
+    ],
     disbursalTimeline: 'Instant Ayushman Golden Card generation upon Aadhaar e-KYC',
     processingFee: '₹0 (Free government service)',
     applicationSteps: [
@@ -85,12 +116,43 @@ export const SCHEMES: Scheme[] = [
       requiresNonTaxpayer: true,
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Mandatory for PM-KISAN e-KYC and DBT transfer', issuer: 'UIDAI', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Mandatory for PM-KISAN e-KYC and DBT transfer', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
       { id: 'land-records', name: 'Land Ownership Document (Khatauni / Khasra / RoR)', purpose: 'Proof of cultivable landholding in applicant’s name', issuer: 'State Revenue Department / Bhulekh', mandatory: true },
-      { id: 'bank-passbook', name: 'NPCI Seeded Bank Account Passbook', purpose: 'For DBT direct bank deposit', issuer: 'Any Scheduled Bank or Post Office', mandatory: true }
+      { id: 'bank-passbook', name: 'NPCI Seeded Bank Account Passbook', purpose: 'For DBT direct bank deposit', issuer: 'Any Scheduled Bank or Post Office', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://pmkisan.gov.in/',
+    helplineNumber: '155261 / 011-24300606 (PM-Kisan Farmer Helpline)',
+    officialLinks: [
+          {
+                "title": "PM-Kisan New Farmer Online Registration",
+                "url": "https://pmkisan.gov.in/RegistrationFormNew.aspx",
+                "type": "apply",
+                "badge": "Online Form",
+                "description": "Submit land revenue records and Aadhaar details for ₹6,000/year DBT"
+          },
+          {
+                "title": "Check Beneficiary Payment Status & Installments",
+                "url": "https://pmkisan.gov.in/BeneficiaryStatus_New.aspx",
+                "type": "status",
+                "badge": "DBT Tracker",
+                "description": "View 4-monthly ₹2,000 installment credits and PFMS bank status"
+          },
+          {
+                "title": "Aadhaar Face / OTP e-KYC Online Authentication",
+                "url": "https://pmkisan.gov.in/aadharekyc.aspx",
+                "type": "apply",
+                "badge": "Mandatory e-KYC",
+                "description": "Complete mandatory e-KYC to keep installments active"
+          },
+          {
+                "title": "Official PM-Kisan Scheme Guidelines",
+                "url": "https://pmkisan.gov.in/Documents/Operational_Guidelines.pdf",
+                "type": "guidelines",
+                "badge": "Official PDF",
+                "description": "Ministry of Agriculture rules on landholding eligibility and exclusions"
+          }
+    ],
     disbursalTimeline: 'Credited directly in April-July, August-November, and December-March cycles',
     processingFee: '₹0 (Free self-registration)',
     applicationSteps: [
@@ -138,13 +200,44 @@ export const SCHEMES: Scheme[] = [
       requiresNonTaxpayer: true
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar of all family members', purpose: 'De-duplication and identity check', issuer: 'UIDAI', mandatory: true },
-      { id: 'income-cert', name: 'Income Certificate / Self Declaration', purpose: 'Verifying EWS/LIG income classification', issuer: 'Tehsildar / Sub-Divisional Magistrate', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar of all family members', purpose: 'De-duplication and identity check', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
+      { id: 'income-cert', name: 'Income Certificate / Self Declaration', purpose: 'Verifying EWS/LIG income classification', issuer: 'Tehsildar / Sub-Divisional Magistrate', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
       { id: 'land-patta', name: 'Land Patta / Ownership Proof or Municipal allotment', purpose: 'Title of construction plot', issuer: 'Local Revenue Authority / Nagar Nigam', mandatory: true },
-      { id: 'bank-passbook', name: 'Bank Account Details', purpose: 'Installment release based on geo-tagged construction stages', issuer: 'Bank', mandatory: true }
+      { id: 'bank-passbook', name: 'Bank Account Details', purpose: 'Installment release based on geo-tagged construction stages', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Gram Panchayat',
     applicationUrl: 'https://pmaymis.gov.in/',
+    helplineNumber: '011-23063285 / 1800-11-6163',
+    officialLinks: [
+          {
+                "title": "PMAY Urban Official National Portal",
+                "url": "https://pmay-urban.gov.in/",
+                "type": "portal",
+                "badge": "Urban Portal",
+                "description": "Affordable Housing in Partnership, BLC, and Interest Subsidy"
+          },
+          {
+                "title": "PMAY Gramin (AwaasSoft Rural Housing Portal)",
+                "url": "https://pmayg.nic.in/",
+                "type": "portal",
+                "badge": "Rural Portal",
+                "description": "Track rural pucca house sanction list and geo-tagged installment releases"
+          },
+          {
+                "title": "Track Citizen Assessment / Application Status",
+                "url": "https://pmay-urban.gov.in/track-assessment-status",
+                "type": "status",
+                "badge": "Track Status",
+                "description": "Real-time assessment search by Aadhaar number or Assessment ID"
+          },
+          {
+                "title": "PMAY Operational Guidelines & Subsidies",
+                "url": "https://pmay-urban.gov.in/guidelines",
+                "type": "guidelines",
+                "badge": "Guidelines",
+                "description": "Ministry of Housing and Urban Affairs subsidy specifications"
+          }
+    ],
     disbursalTimeline: 'Staged disbursals linked with geo-tagged foundation, lintel, and roof completion photos',
     processingFee: '₹0 (Free government scheme)',
     applicationSteps: [
@@ -192,13 +285,37 @@ export const SCHEMES: Scheme[] = [
       occupations: ['Small Business / MSME', 'Street Vendor / Hawker', 'Artisan / Craftsman', 'Daily Wage / Construction', 'Unemployed'],
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar / Voter ID / PAN Card', purpose: 'Identity and address KYC', issuer: 'UIDAI / IT Dept', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar / Voter ID / PAN Card', purpose: 'Identity and address KYC', issuer: 'UIDAI / IT Dept', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
       { id: 'business-proof', name: 'Business Registration / Trade License / Udyam Certificate', purpose: 'Proof of micro-enterprise activity', issuer: 'MSME Ministry / Local Body', mandatory: false },
       { id: 'bank-statement', name: 'Bank Account Statement (Past 6 Months)', purpose: 'Credit assessment', issuer: 'Applicant Bank', mandatory: true },
       { id: 'project-report', name: 'Business Project Proposal / Quotation for machinery', purpose: 'Utilization of funds', issuer: 'Applicant / Supplier', mandatory: true }
     ],
     applicationMode: 'Bank Branch',
     applicationUrl: 'https://www.udyamimitra.in/',
+    helplineNumber: '1800-180-1111 (National Toll-Free)',
+    officialLinks: [
+          {
+                "title": "UdyamiMitra Portal (Online MUDRA Loan Application)",
+                "url": "https://www.udyamimitra.in/",
+                "type": "apply",
+                "badge": "Direct Apply",
+                "description": "Apply digitally across 150+ commercial banks, RRBs, and MFIs"
+          },
+          {
+                "title": "Official MUDRA Scheme Portal",
+                "url": "https://www.mudra.org.in/",
+                "type": "portal",
+                "badge": "Central Portal",
+                "description": "Complete details on Shishu (up to ₹50k), Kishore (up to ₹5L), Tarun (up to ₹20L)"
+          },
+          {
+                "title": "List of Approved MUDRA Partner Banks & NBFCs",
+                "url": "https://www.mudra.org.in/Borrowers/List_of_Lenders",
+                "type": "portal",
+                "badge": "Lender Directory",
+                "description": "Direct contact details for bank branch loan officers"
+          }
+    ],
     disbursalTimeline: 'Usually 7 to 15 business days following bank credit appraisal',
     processingFee: 'Nil for Shishu loans; nominal for Kishore & Tarun loans',
     applicationSteps: [
@@ -250,6 +367,30 @@ export const SCHEMES: Scheme[] = [
     ],
     applicationMode: 'Bank Branch',
     applicationUrl: 'https://www.indiapost.gov.in/Financial/Pages/Content/Sukanya-Samriddhi-Account.aspx',
+    helplineNumber: '1800-266-6868 (India Post Helpdesk)',
+    officialLinks: [
+          {
+                "title": "India Post SSY Official Savings Account Portal",
+                "url": "https://www.indiapost.gov.in/Financial/Pages/Content/Post-Office-Saving-Schemes.aspx",
+                "type": "portal",
+                "badge": "Post Office",
+                "description": "Account opening rules, deposit limits, interest rates, and branch locator"
+          },
+          {
+                "title": "Sukanya Samriddhi Maturity Calculator & Rules",
+                "url": "https://www.indiapost.gov.in/",
+                "type": "guidelines",
+                "badge": "Tax Free (EEE)",
+                "description": "Section 80C tax deduction guide & 8.2% annual compound growth schedule"
+          },
+          {
+                "title": "Reserve Bank of India Master Direction on SSY",
+                "url": "https://www.rbi.org.in/",
+                "type": "guidelines",
+                "badge": "RBI Gazette",
+                "description": "Official notifications on premature withdrawal for higher studies"
+          }
+    ],
     disbursalTimeline: 'Account opens immediately; matures upon 21 years or girl child’s marriage after age 18',
     processingFee: '₹0 (Free account opening with ₹250 initial deposit)',
     applicationSteps: [
@@ -297,12 +438,36 @@ export const SCHEMES: Scheme[] = [
       requiresNonTaxpayer: true
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar Card with linked mobile', purpose: 'Biometric registration & e-KYC', issuer: 'UIDAI', mandatory: true },
-      { id: 'bank-passbook', name: 'Bank Account Passbook', purpose: 'Stipend and toolkit e-voucher crediting', issuer: 'Bank', mandatory: true },
-      { id: 'ration-card', name: 'Family Ration Card', purpose: 'One member per family rule verification', issuer: 'State Food Dept', mandatory: true }
+      { id: 'aadhaar', name: 'Aadhaar Card with linked mobile', purpose: 'Biometric registration & e-KYC', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
+      { id: 'bank-passbook', name: 'Bank Account Passbook', purpose: 'Stipend and toolkit e-voucher crediting', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' },
+      { id: 'ration-card', name: 'Family Ration Card', purpose: 'One member per family rule verification', issuer: 'State Food Dept', mandatory: true, downloadUrl: 'https://nfsa.gov.in/' }
     ],
     applicationMode: 'CSC / Common Service Center',
     applicationUrl: 'https://pmvishwakarma.gov.in/',
+    helplineNumber: '1800-267-7777 / 011-23061574',
+    officialLinks: [
+          {
+                "title": "PM Vishwakarma Official Portal & CSC Registration",
+                "url": "https://pmvishwakarma.gov.in/",
+                "type": "apply",
+                "badge": "Direct Apply",
+                "description": "Biometric registration for 18 traditional crafts via CSC centers"
+          },
+          {
+                "title": "Artisan Login & Vishwakarma Digital Certificate",
+                "url": "https://pmvishwakarma.gov.in/Home/Login",
+                "type": "status",
+                "badge": "Artisan ID",
+                "description": "Download PM Vishwakarma ID card and check 3-tier verification status"
+          },
+          {
+                "title": "₹15,000 Modern Toolkit E-Voucher Details",
+                "url": "https://pmvishwakarma.gov.in/Home/AboutScheme",
+                "type": "guidelines",
+                "badge": "Toolkit Voucher",
+                "description": "List of certified modern tools for carpenters, masons, cobblers, tailors, etc."
+          }
+    ],
     disbursalTimeline: 'Training scheduled within 3 weeks; toolkit e-voucher disbursed on completion',
     processingFee: '₹0 (Govt reimburses CSC fees)',
     applicationSteps: [
@@ -351,11 +516,35 @@ export const SCHEMES: Scheme[] = [
     },
     documentsRequired: [
       { id: 'vending-cert', name: 'Certificate of Vending / Vendor ID Card (CoV/LoR)', purpose: 'Proof of street vending from ULB/Town Vending Committee', issuer: 'Urban Local Body / Municipality', mandatory: true },
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Identity & e-KYC', issuer: 'UIDAI', mandatory: true },
-      { id: 'bank-passbook', name: 'Bank Passbook / UPI QR Code', purpose: 'Direct loan disbursal and digital cashback', issuer: 'Bank / Payment Provider', mandatory: true }
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Identity & e-KYC', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
+      { id: 'bank-passbook', name: 'Bank Passbook / UPI QR Code', purpose: 'Direct loan disbursal and digital cashback', issuer: 'Bank / Payment Provider', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://pmsvanidhi.mohua.gov.in/',
+    helplineNumber: '1800-111-979 (Ministry of Housing & Urban Affairs)',
+    officialLinks: [
+          {
+                "title": "PM SVANidhi Portal (Apply for Street Vendor Loan)",
+                "url": "https://pmsvanidhi.mohua.gov.in/",
+                "type": "apply",
+                "badge": "Instant Apply",
+                "description": "1st tranche ₹10,000, 2nd tranche ₹20,000, 3rd tranche ₹50,000 collateral-free credit"
+          },
+          {
+                "title": "Track Application Status Online",
+                "url": "https://pmsvanidhi.mohua.gov.in/Home/TrackStatus",
+                "type": "status",
+                "badge": "Live Status",
+                "description": "Enter registered mobile number and application number to track bank sanction"
+          },
+          {
+                "title": "Letter of Recommendation (LoR) Online Application",
+                "url": "https://pmsvanidhi.mohua.gov.in/",
+                "type": "apply",
+                "badge": "ULB LoR Form",
+                "description": "For vendors without existing vending certificate from urban local body"
+          }
+    ],
     disbursalTimeline: 'Usually within 10 to 14 days directly into applicant’s bank account',
     processingFee: '₹0 (Zero processing fee)',
     applicationSteps: [
@@ -405,14 +594,45 @@ export const SCHEMES: Scheme[] = [
       maxAge: 32
     },
     documentsRequired: [
-      { id: 'income-cert', name: 'Income Certificate (< ₹2.5 Lakh)', purpose: 'Proof of parental annual income ceiling', issuer: 'Revenue Authority / Tehsildar', mandatory: true },
-      { id: 'caste-cert', name: 'Caste / Community Certificate', purpose: 'Social category verification', issuer: 'Competent District Magistrate / Tehsildar', mandatory: true },
+      { id: 'income-cert', name: 'Income Certificate (< ₹2.5 Lakh)', purpose: 'Proof of parental annual income ceiling', issuer: 'Revenue Authority / Tehsildar', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
+      { id: 'caste-cert', name: 'Caste / Community Certificate', purpose: 'Social category verification', issuer: 'Competent District Magistrate / Tehsildar', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
       { id: 'marksheet', name: 'Previous Academic Year Marksheet', purpose: 'Passing percentage verification', issuer: 'School Board / University', mandatory: true },
       { id: 'fee-receipt', name: 'Current Course Bonafide Certificate & Fee Receipt', purpose: 'Proof of ongoing enrollment', issuer: 'College / Educational Institution', mandatory: true },
-      { id: 'bank-passbook', name: 'Student’s Own Bank Passbook', purpose: 'DBT scholarship crediting', issuer: 'Scheduled Bank', mandatory: true }
+      { id: 'bank-passbook', name: 'Student’s Own Bank Passbook', purpose: 'DBT scholarship crediting', issuer: 'Scheduled Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://scholarships.gov.in/',
+    helplineNumber: '0120-6619540 / helpdesk@nsp.gov.in',
+    officialLinks: [
+          {
+                "title": "National Scholarship Portal (NSP) - New Student Registration",
+                "url": "https://scholarships.gov.in/fresh/newstdRegfrmInstruction",
+                "type": "apply",
+                "badge": "Fresh Application",
+                "description": "OTR (One Time Registration) with Aadhaar and academic marksheet"
+          },
+          {
+                "title": "NSP Student Login & Application Renewal",
+                "url": "https://scholarships.gov.in/",
+                "type": "status",
+                "badge": "Student Login",
+                "description": "Check institute nodal officer verification and state approval"
+          },
+          {
+                "title": "PFMS DBT Payment Status (Know Your Payments)",
+                "url": "https://pfms.nic.in/static/NewLayout_KnowYourPayments.aspx",
+                "type": "status",
+                "badge": "PFMS Tracker",
+                "description": "Track scholarship money credit directly in your Aadhaar-linked bank account"
+          },
+          {
+                "title": "NSP Official Scheme Guidelines & Eligibility Roster",
+                "url": "https://scholarships.gov.in/public/schemeGuidelines/Guidelines.pdf",
+                "type": "guidelines",
+                "badge": "Official PDF",
+                "description": "Post-Matric, Top Class, and Pre-Matric Central Sector guidelines"
+          }
+    ],
     disbursalTimeline: 'Disbursed directly into student account within 2-3 months after state nodal verification',
     processingFee: '₹0 (Free portal registration)',
     applicationSteps: [
@@ -460,12 +680,29 @@ export const SCHEMES: Scheme[] = [
       requiresNonTaxpayer: true
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Identity and age verification', issuer: 'UIDAI', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Identity and age verification', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
       { id: 'bank-account', name: 'Savings Bank Account with Auto-Debit facility', purpose: 'Automatic monthly/quarterly contribution deductions', issuer: 'Bank / Post Office', mandatory: true },
       { id: 'nominee-details', name: 'Nominee Aadhaar & Identity', purpose: 'Corpus inheritance rights', issuer: 'UIDAI', mandatory: true }
     ],
     applicationMode: 'Bank Branch',
     applicationUrl: 'https://enps.nsdl.com/eNPS/ApySubForm.html',
+    helplineNumber: '1800-110-069 (PFRDA Pension Helpdesk)',
+    officialLinks: [
+          {
+                "title": "NSDL CRA APY Portal & e-PRAN Download",
+                "url": "https://www.npscra.nsdl.co.in/scheme-details.php",
+                "type": "portal",
+                "badge": "NSDL Portal",
+                "description": "Download APY e-PRAN card and generate transaction statement"
+          },
+          {
+                "title": "PFRDA Pension & Premium Contribution Calculator",
+                "url": "https://www.pfrda.org.in/",
+                "type": "guidelines",
+                "badge": "Contribution Chart",
+                "description": "Age-wise monthly contribution chart for guaranteed ₹1,000 to ₹5,000 pension"
+          }
+    ],
     disbursalTimeline: 'PRAN allotted immediately; guaranteed pension payout commences upon turning 60 years old',
     processingFee: '₹0 (Zero enrollment charge)',
     applicationSteps: [
@@ -516,10 +753,27 @@ export const SCHEMES: Scheme[] = [
     documentsRequired: [
       { id: 'aadhaar-mother', name: 'Mother’s Aadhaar Card', purpose: 'Mandatory beneficiary identification', issuer: 'UIDAI', mandatory: true },
       { id: 'mcp-card', name: 'Mother and Child Protection (MCP) Card', purpose: 'Proof of pregnancy registration and ANC checkup', issuer: 'Anganwadi / Primary Health Centre', mandatory: true },
-      { id: 'bank-passbook', name: 'Mother’s Own Bank Passbook', purpose: 'Aadhaar-seeded account for DBT', issuer: 'Bank', mandatory: true }
+      { id: 'bank-passbook', name: 'Mother’s Own Bank Passbook', purpose: 'Aadhaar-seeded account for DBT', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'CSC / Common Service Center',
     applicationUrl: 'https://pmmvy.wcd.gov.in/',
+    helplineNumber: '011-23382393 (Women & Child Development Helpdesk)',
+    officialLinks: [
+          {
+                "title": "PMMVY Citizen Registration Portal",
+                "url": "https://pmmvy.wcd.gov.in/",
+                "type": "apply",
+                "badge": "Citizen Portal",
+                "description": "Direct citizen self-registration and installment tracking for pregnant women"
+          },
+          {
+                "title": "Ministry of Women and Child Development Guidelines",
+                "url": "https://wcd.gov.in/schemes/pradhan-mantri-matru-vandana-yojana",
+                "type": "guidelines",
+                "badge": "Guidelines",
+                "description": "Mother and Child Protection (MCP) card rules and immunization milestone schedule"
+          }
+    ],
     disbursalTimeline: 'Direct bank transfer within 30 days of registering milestone on PMMVY portal',
     processingFee: '₹0 (Completely free at Anganwadi / Health Sub-Centre)',
     applicationSteps: [
@@ -568,11 +822,42 @@ export const SCHEMES: Scheme[] = [
     },
     documentsRequired: [
       { id: 'aadhaar-applicant', name: 'Aadhaar Card of Woman Applicant', purpose: 'Identity and age verification', issuer: 'UIDAI', mandatory: true },
-      { id: 'ration-card', name: 'Ration Card / Annexure-I Family Composition Declaration', purpose: 'Proof that household has no existing LPG connection', issuer: 'State Food & Civil Supplies Dept', mandatory: true },
-      { id: 'bank-passbook', name: 'Bank Passbook linked with Aadhaar', purpose: 'Direct cylinder subsidy credit', issuer: 'Bank', mandatory: true }
+      { id: 'ration-card', name: 'Ration Card / Annexure-I Family Composition Declaration', purpose: 'Proof that household has no existing LPG connection', issuer: 'State Food & Civil Supplies Dept', mandatory: true, downloadUrl: 'https://nfsa.gov.in/' },
+      { id: 'bank-passbook', name: 'Bank Passbook linked with Aadhaar', purpose: 'Direct cylinder subsidy credit', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'CSC / Common Service Center',
     applicationUrl: 'https://www.pmuy.gov.in/',
+    helplineNumber: '1800-266-6696 / 1906 (24x7 Gas Emergency)',
+    officialLinks: [
+          {
+                "title": "PM Ujjwala Yojana 2.0 Online Application",
+                "url": "https://www.pmuy.gov.in/ujjwala2.html",
+                "type": "apply",
+                "badge": "Apply Online",
+                "description": "Free LPG connection with zero deposit, free stove & first refill for women"
+          },
+          {
+                "title": "Indane Gas Ujjwala Registration",
+                "url": "https://cx.indianoil.in/",
+                "type": "apply",
+                "badge": "Indane Gas",
+                "description": "Indian Oil Corporation Ujjwala 2.0 distributor portal"
+          },
+          {
+                "title": "Bharat Gas Ujjwala Registration",
+                "url": "https://my.ebharatgas.com/",
+                "type": "apply",
+                "badge": "Bharat Gas",
+                "description": "Bharat Petroleum online consumer enrollment"
+          },
+          {
+                "title": "HP Gas Ujjwala Registration",
+                "url": "https://myhpgas.in/",
+                "type": "apply",
+                "badge": "HP Gas",
+                "description": "Hindustan Petroleum online consumer enrollment"
+          }
+    ],
     disbursalTimeline: 'LPG connection and stove delivered within 7 to 10 days of distributor verification',
     processingFee: '₹0 (Completely free for eligible beneficiaries)',
     applicationSteps: [
@@ -625,6 +910,30 @@ export const SCHEMES: Scheme[] = [
     ],
     applicationMode: 'Bank Branch',
     applicationUrl: 'https://fasalrin.gov.in/',
+    helplineNumber: '1800-180-1551 (Kisan Call Centre)',
+    officialLinks: [
+          {
+                "title": "Department of Agriculture KCC Scheme Portal",
+                "url": "https://agricoop.nic.in/",
+                "type": "portal",
+                "badge": "Agri Portal",
+                "description": "Operational guidelines for crop, livestock, and fisheries loans at 4% effective interest"
+          },
+          {
+                "title": "NABARD Kisan Credit Card Guidelines",
+                "url": "https://www.nabard.org/",
+                "type": "guidelines",
+                "badge": "NABARD",
+                "description": "Scale of finance and prompt repayment 3% interest subvention"
+          },
+          {
+                "title": "SBI Kisan Credit Card Application Portal",
+                "url": "https://sbi.co.in/web/agri-rural/agriculture-banking/kisan-credit-card",
+                "type": "apply",
+                "badge": "Bank Portal",
+                "description": "Online application and RuPay Kisan Card activation"
+          }
+    ],
     disbursalTimeline: 'Bank must process and issue KCC within 14 days of receiving complete application',
     processingFee: 'Zero processing fee, documentation, or ledger folio charges for limits up to ₹3 Lakh',
     applicationSteps: [
@@ -670,12 +979,36 @@ export const SCHEMES: Scheme[] = [
       requiresNonTaxpayer: true
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Age proof and DBT verification', issuer: 'UIDAI', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Age proof and DBT verification', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
       { id: 'bpl-proof', name: 'BPL Ration Card / SECC Inclusion Slip', purpose: 'Proof of below-poverty line status', issuer: 'Gram Panchayat / Block Office', mandatory: true },
-      { id: 'bank-passbook', name: 'Single Bank Account Passbook', purpose: 'Monthly pension credit', issuer: 'Bank', mandatory: true }
+      { id: 'bank-passbook', name: 'Single Bank Account Passbook', purpose: 'Monthly pension credit', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'District Welfare Office',
     applicationUrl: 'https://nsap.nic.in/',
+    helplineNumber: '011-24360670 (National Social Assistance Programme)',
+    officialLinks: [
+          {
+                "title": "NSAP National Social Assistance Portal",
+                "url": "https://nsap.nic.in/",
+                "type": "portal",
+                "badge": "NSAP Portal",
+                "description": "Check senior citizen pension eligibility and state-wise quota allocation"
+          },
+          {
+                "title": "Track Pension Disbursal & Beneficiary Search",
+                "url": "https://nsap.nic.in/",
+                "type": "status",
+                "badge": "Pension Tracker",
+                "description": "Search payment history using Sanction Order Number or Application ID"
+          },
+          {
+                "title": "UMANG Pension Services Gateway",
+                "url": "https://web.umang.gov.in/",
+                "type": "portal",
+                "badge": "UMANG",
+                "description": "Access digital life certificate submission and pension tracking"
+          }
+    ],
     disbursalTimeline: 'Monthly automatic DBT release following Block/District Sanction Committee approval',
     processingFee: '₹0 (Free government service)',
     applicationSteps: [
@@ -724,12 +1057,29 @@ export const SCHEMES: Scheme[] = [
     },
     documentsRequired: [
       { id: 'kyc', name: 'Aadhaar and PAN Card of Promoters', purpose: 'KYC and credit registry checks', issuer: 'UIDAI / IT Dept', mandatory: true },
-      { id: 'caste-cert', name: 'SC/ST Certificate (if male applicant)', purpose: 'Eligibility verification', issuer: 'District Magistrate', mandatory: false },
+      { id: 'caste-cert', name: 'SC/ST Certificate (if male applicant)', purpose: 'Eligibility verification', issuer: 'District Magistrate', mandatory: false, downloadUrl: 'https://services.india.gov.in/' },
       { id: 'project-report', name: 'Detailed Project Report (DPR)', purpose: 'Viability and machinery costs analysis', issuer: 'Chartered Accountant / Consultant', mandatory: true },
       { id: 'shareholding', name: 'Partnership deed / RoC Incorporation (51% female or SC/ST stake)', purpose: 'Majority controlling stake proof for non-individual units', issuer: 'MCA', mandatory: false }
     ],
     applicationMode: 'Bank Branch',
     applicationUrl: 'https://www.standupmitra.in/',
+    helplineNumber: '1800-180-1159 (Stand-Up India Helpdesk)',
+    officialLinks: [
+          {
+                "title": "Stand-Up India Official Portal",
+                "url": "https://www.standupmitra.in/",
+                "type": "apply",
+                "badge": "Direct Apply",
+                "description": "₹10 Lakh to ₹1 Crore greenfield enterprise bank loans for SC/ST and women"
+          },
+          {
+                "title": "Locate Handholding Agencies (Training & DPR Preparation)",
+                "url": "https://www.standupmitra.in/",
+                "type": "portal",
+                "badge": "Handholding",
+                "description": "Connect with NABARD, SIDBI, and MSME-DI mentorship agencies"
+          }
+    ],
     disbursalTimeline: '30 to 45 business days for project appraisal and credit sanction',
     processingFee: 'Nominal bank appraisal fee as per commercial guidelines',
     applicationSteps: [
@@ -777,12 +1127,36 @@ export const SCHEMES: Scheme[] = [
       occupations: ['Unemployed', 'Student', 'Daily Wage / Construction', 'Artisan / Craftsman']
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Biometric student attendance and Skill India ID', issuer: 'UIDAI', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Biometric student attendance and Skill India ID', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
       { id: 'edu-proof', name: 'Last Educational Qualification Marksheet', purpose: 'Course entry criteria check', issuer: 'School / College', mandatory: true },
-      { id: 'bank-passbook', name: 'Bank Passbook', purpose: 'Direct credit of training stipend', issuer: 'Bank', mandatory: true }
+      { id: 'bank-passbook', name: 'Bank Passbook', purpose: 'Direct credit of training stipend', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://www.skillindiadigital.gov.in/',
+    helplineNumber: '08800055555 (NSDC Candidate Helpline)',
+    officialLinks: [
+          {
+                "title": "Skill India Digital Hub (SIDH)",
+                "url": "https://www.skillindiadigital.gov.in/",
+                "type": "portal",
+                "badge": "Digital Hub",
+                "description": "Enrol in Industry 4.0 courses, AI, robotics, drone pilot & mechatronics"
+          },
+          {
+                "title": "Locate Nearest PMKVY Accredited Skill Center",
+                "url": "https://www.skillindiadigital.gov.in/centers",
+                "type": "portal",
+                "badge": "Center Locator",
+                "description": "Search Pradhan Mantri Kaushal Kendras (PMKK) across districts"
+          },
+          {
+                "title": "PMKVY 4.0 Official Scheme Guidelines",
+                "url": "https://www.msde.gov.in/en/schemes-initiatives/schemes-initiatives-through-nsdc/pradhan-mantri-kaushal-vikas-yojana-pmkvy",
+                "type": "guidelines",
+                "badge": "MSDE PDF",
+                "description": "Assessment rules, NSQF level badges, and direct candidate wage stipend"
+          }
+    ],
     disbursalTimeline: 'Batches run throughout the year; certificate and placement support upon passing exam',
     processingFee: '₹0 (Completely free for candidates)',
     applicationSteps: [
@@ -835,6 +1209,30 @@ export const SCHEMES: Scheme[] = [
     ],
     applicationMode: 'CSC / Common Service Center',
     applicationUrl: 'https://nfsa.gov.in/',
+    helplineNumber: '1967 / 1800-180-2087 (National Food Portal Helpline)',
+    officialLinks: [
+          {
+                "title": "National Food Security Portal (Annavitran)",
+                "url": "https://nfsa.gov.in/",
+                "type": "portal",
+                "badge": "Central Portal",
+                "description": "Check NFSA ration entitlement and FPS (Fair Price Shop) allocations"
+          },
+          {
+                "title": "One Nation One Ration Card (ONORC) National Portability",
+                "url": "https://nfsa.gov.in/portal/onorc",
+                "type": "status",
+                "badge": "ONORC Status",
+                "description": "Collect free foodgrains from any ration shop across India via Aadhaar"
+          },
+          {
+                "title": "Mera Ration Mobile App (Google Play)",
+                "url": "https://play.google.com/store/apps/details?id=com.nic.mops.rationcard",
+                "type": "portal",
+                "badge": "Mobile App",
+                "description": "Check nearby FPS ration shops, entitlement quota, and transaction history"
+          }
+    ],
     disbursalTimeline: 'Monthly grain quota available on 1st of every calendar month at Fair Price Shops',
     processingFee: '₹0 (Zero fee for NFSA grain entitlement)',
     applicationSteps: [
@@ -881,13 +1279,37 @@ export const SCHEMES: Scheme[] = [
       requiresBpl: true
     },
     documentsRequired: [
-      { id: 'disability-cert', name: 'Disability Certificate / UDID Card', purpose: 'Medical board disability assessment (>40%)', issuer: 'District Chief Medical Officer (CMO)', mandatory: true },
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Identity & DBT', issuer: 'UIDAI', mandatory: true },
+      { id: 'disability-cert', name: 'Disability Certificate / UDID Card', purpose: 'Medical board disability assessment (>40%)', issuer: 'District Chief Medical Officer (CMO)', mandatory: true, downloadUrl: 'https://www.swavlambancard.gov.in/' },
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Identity & DBT', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
       { id: 'bpl-cert', name: 'BPL Card / Income Certificate', purpose: 'Economic means test', issuer: 'Revenue Authority', mandatory: true },
-      { id: 'bank-passbook', name: 'Applicant Bank Passbook', purpose: 'Pension disbursal', issuer: 'Bank', mandatory: true }
+      { id: 'bank-passbook', name: 'Applicant Bank Passbook', purpose: 'Pension disbursal', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'District Welfare Office',
     applicationUrl: 'https://www.swavlambancard.gov.in/',
+    helplineNumber: '011-24369054 (Department of Empowerment of PwDs)',
+    officialLinks: [
+          {
+                "title": "Swavlamban UDID Card Official Portal",
+                "url": "https://www.swavlambancard.gov.in/",
+                "type": "portal",
+                "badge": "UDID Portal",
+                "description": "National database for persons with disabilities and digital UDID Smart Card"
+          },
+          {
+                "title": "Apply Online for Disability Certificate & UDID Card",
+                "url": "https://www.swavlambancard.gov.in/pwd/application",
+                "type": "apply",
+                "badge": "Apply UDID",
+                "description": "Medical board assessment slot booking and digital disability certificate issuance"
+          },
+          {
+                "title": "NSAP Disability Pension Portal",
+                "url": "https://nsap.nic.in/",
+                "type": "status",
+                "badge": "Pension Portal",
+                "description": "Track monthly DBT disability grant status and bank account credits"
+          }
+    ],
     disbursalTimeline: 'Monthly pension release; UDID card delivered via Speed Post within 30 days',
     processingFee: '₹0 (Free government service)',
     applicationSteps: [
@@ -934,11 +1356,35 @@ export const SCHEMES: Scheme[] = [
     },
     documentsRequired: [
       { id: 'elec-bill', name: 'Latest Electricity Bill (Past 6 months)', purpose: 'Consumer number, sanctioned load, and DISCOM verification', issuer: 'State Electricity Distribution Company (DISCOM)', mandatory: true },
-      { id: 'aadhaar', name: 'Aadhaar Card of Electricity Consumer', purpose: 'Identity & subsidy DBT', issuer: 'UIDAI', mandatory: true },
-      { id: 'bank-passbook', name: 'Cancelled Cheque / Bank Passbook', purpose: 'Direct bank credit of ₹78,000 subsidy', issuer: 'Bank', mandatory: true }
+      { id: 'aadhaar', name: 'Aadhaar Card of Electricity Consumer', purpose: 'Identity & subsidy DBT', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
+      { id: 'bank-passbook', name: 'Cancelled Cheque / Bank Passbook', purpose: 'Direct bank credit of ₹78,000 subsidy', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://pmsuryaghar.gov.in/',
+    helplineNumber: '15555 (Toll-Free National Solar Helpline)',
+    officialLinks: [
+          {
+                "title": "PM Surya Ghar Muft Bijli Official Portal",
+                "url": "https://pmsuryaghar.gov.in/",
+                "type": "apply",
+                "badge": "National Portal",
+                "description": "Consumer registration, DISCOM meter approval, and direct bank subsidy release"
+          },
+          {
+                "title": "Rooftop Solar Subsidy & Electricity Savings Calculator",
+                "url": "https://pmsuryaghar.gov.in/rooftop_calculator",
+                "type": "guidelines",
+                "badge": "Calculator",
+                "description": "Calculate system capacity (1kW, 2kW, 3kW), cost, and ₹30k to ₹78k subsidy"
+          },
+          {
+                "title": "Find Registered DISCOM Solar Installers & Vendors",
+                "url": "https://pmsuryaghar.gov.in/",
+                "type": "portal",
+                "badge": "Vendor Directory",
+                "description": "Empaneled certified rooftop solar EPC contractors in your pin code"
+          }
+    ],
     disbursalTimeline: 'Subsidy credited directly to bank account within 30 days of net-meter installation',
     processingFee: '₹0 (Registration is completely free)',
     applicationSteps: [
@@ -987,11 +1433,35 @@ export const SCHEMES: Scheme[] = [
     documentsRequired: [
       { id: 'land-possession', name: 'Land Record (Khatauni / Khasra / LPC)', purpose: 'Verification of crop sown area', issuer: 'Revenue Dept / Patwari', mandatory: true },
       { id: 'sowing-cert', name: 'Sowing Certificate / Self Declaration of Crop', purpose: 'Proof of notified crop cultivation', issuer: 'Patwari / Village Agriculture Officer', mandatory: true },
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'KYC and claim settlement link', issuer: 'UIDAI', mandatory: true },
-      { id: 'bank-passbook', name: 'Aadhaar-seeded Bank Passbook', purpose: 'Claim compensation DBT', issuer: 'Bank', mandatory: true }
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'KYC and claim settlement link', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
+      { id: 'bank-passbook', name: 'Aadhaar-seeded Bank Passbook', purpose: 'Claim compensation DBT', issuer: 'Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://pmfby.gov.in/',
+    helplineNumber: '14447 / 1800-180-1551 (PMFBY / Kisan Call Centre)',
+    officialLinks: [
+          {
+                "title": "PMFBY National Crop Insurance Portal",
+                "url": "https://pmfby.gov.in/",
+                "type": "portal",
+                "badge": "Insurance Portal",
+                "description": "Direct farmer crop insurance enrollment and seasonal cut-off calendar"
+          },
+          {
+                "title": "Farmer Insurance Premium Calculator",
+                "url": "https://pmfby.gov.in/premiumCalculator",
+                "type": "guidelines",
+                "badge": "Premium Calculator",
+                "description": "Calculate 1.5% Rabi / 2% Kharif premium and sum insured per hectare"
+          },
+          {
+                "title": "Report Crop Loss & Track Claim Settlement",
+                "url": "https://pmfby.gov.in/",
+                "type": "status",
+                "badge": "Claim Tracker",
+                "description": "Intimate crop damage within 72 hours of unseasonal rain/flood/drought"
+          }
+    ],
     disbursalTimeline: 'Claims credited directly into bank account via National Crop Insurance Portal DBT within 3 weeks of loss assessment',
     processingFee: '₹0 administrative fee; only statutory 1.5%-2% farmer premium share',
     applicationSteps: [
@@ -1046,6 +1516,30 @@ export const SCHEMES: Scheme[] = [
     ],
     applicationMode: 'Gram Panchayat',
     applicationUrl: 'https://nrlm.gov.in/',
+    helplineNumber: '011-24654714 (DAY-NRLM National Helpdesk)',
+    officialLinks: [
+          {
+                "title": "DAY-NRLM Aajeevika National Portal",
+                "url": "https://aajeevika.gov.in/",
+                "type": "portal",
+                "badge": "National Portal",
+                "description": "Self Help Group formation, revolving funds, and Community Investment Funds (CIF)"
+          },
+          {
+                "title": "Lakhpati Didi National Mission Dashboard",
+                "url": "https://lakhpatididi.gov.in/",
+                "type": "portal",
+                "badge": "Lakhpati Didi",
+                "description": "Empowering 3 crore rural women to earn sustainable annual income above ₹1 Lakh"
+          },
+          {
+                "title": "Ministry of Rural Development Policy Guidelines",
+                "url": "https://rural.nic.in/",
+                "type": "guidelines",
+                "badge": "MoRD Guidelines",
+                "description": "Collateral-free credit up to ₹10-20 Lakh for women SHGs"
+          }
+    ],
     disbursalTimeline: 'Direct bank release following grading by Block Mission Management Unit (BMMU)',
     processingFee: '₹0 (No processing fee for SHG loans)',
     applicationSteps: [
@@ -1095,13 +1589,44 @@ export const SCHEMES: Scheme[] = [
       maxAnnualIncome: 800000
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Biometric identity & e-KYC verification', issuer: 'UIDAI', mandatory: true },
-      { id: 'edu-cert', name: 'Educational Marksheets / Diploma / Degree Certificate', purpose: 'Proof of Class 10/12/ITI/Diploma/Graduation completion', issuer: 'Recognized Board / University / Technical Board', mandatory: true },
-      { id: 'bank-passbook', name: 'Aadhaar-Seeded Bank Passbook', purpose: 'Direct Benefit Transfer (DBT) of monthly ₹5,000 stipend', issuer: 'Any Scheduled Commercial Bank or Post Office', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Biometric identity & e-KYC verification', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
+      { id: 'edu-cert', name: 'Educational Marksheets / Diploma / Degree Certificate', purpose: 'Proof of Class 10/12/ITI/Diploma/Graduation completion', issuer: 'Recognized Board / University / Technical Board', mandatory: true, downloadUrl: 'https://www.digilocker.gov.in/' },
+      { id: 'bank-passbook', name: 'Aadhaar-Seeded Bank Passbook', purpose: 'Direct Benefit Transfer (DBT) of monthly ₹5,000 stipend', issuer: 'Any Scheduled Commercial Bank or Post Office', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' },
       { id: 'self-declaration', name: 'Self-Declaration Form', purpose: 'Confirmation of non-taxpayer household & non-govt employee status', issuer: 'Online Portal Self-attestation', mandatory: true }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://pminternship.mca.gov.in/',
+    helplineNumber: '1800-180-5522 (PM Internship Scheme Helpdesk)',
+    officialLinks: [
+          {
+                "title": "PM Internship Official Portal (Youth Registration)",
+                "url": "https://pminternship.mca.gov.in/",
+                "type": "apply",
+                "badge": "Candidate Portal",
+                "description": "Aadhaar e-KYC registration for paid corporate internships in top 500 companies"
+          },
+          {
+                "title": "Search Available Internship Roles & Sectors",
+                "url": "https://pminternship.mca.gov.in/",
+                "type": "portal",
+                "badge": "Job Explorer",
+                "description": "Browse openings in Automotive, Banking, IT, Energy, FMCG & Manufacturing"
+          },
+          {
+                "title": "Ministry of Corporate Affairs (MCA) Scheme Guidelines",
+                "url": "https://www.mca.gov.in/",
+                "type": "guidelines",
+                "badge": "Official Rules",
+                "description": "Monthly ₹5,000 stipend structure + ₹6,000 joining grant and corporate CSR rules"
+          },
+          {
+                "title": "Candidate Dashboard & Offer Letter Acceptance",
+                "url": "https://pminternship.mca.gov.in/",
+                "type": "status",
+                "badge": "Track Selection",
+                "description": "View shortlist status, company interviews, and confirm internship joinings"
+          }
+    ],
     disbursalTimeline: 'Monthly DBT stipend credit directly into bank account via PFMS by 7th of every month',
     processingFee: '₹0 (100% Free Government Portal)',
     applicationSteps: [
@@ -1152,12 +1677,43 @@ export const SCHEMES: Scheme[] = [
       occupations: ['Student', 'Unemployed', 'Daily Wage / Construction', 'Artisan / Craftsman', 'Small Business / MSME']
     },
     documentsRequired: [
-      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Digital identity and Skill India Passbook creation', issuer: 'UIDAI', mandatory: true },
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Digital identity and Skill India Passbook creation', issuer: 'UIDAI', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/' },
       { id: 'mobile', name: 'Mobile Number', purpose: 'OTP login & course completion progress alerts', issuer: 'Telecom Provider', mandatory: true },
-      { id: 'bank-passbook', name: 'Bank Account Passbook (For Apprenticeship)', purpose: 'Receipt of NAPS stipend direct benefit transfer', issuer: 'Any Scheduled Bank', mandatory: false }
+      { id: 'bank-passbook', name: 'Bank Account Passbook (For Apprenticeship)', purpose: 'Receipt of NAPS stipend direct benefit transfer', issuer: 'Any Scheduled Bank', mandatory: false, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://www.skillindiadigital.gov.in/',
+    helplineNumber: '08800055555 / 1800-123-9626 (Skill India Hub)',
+    officialLinks: [
+          {
+                "title": "Skill India Digital Hub - Explore Free Courses",
+                "url": "https://www.skillindiadigital.gov.in/courses",
+                "type": "apply",
+                "badge": "Free Courses",
+                "description": "1,000+ certified courses in AI, Cloud, Cybersecurity, Solar, EV & Healthcare"
+          },
+          {
+                "title": "National Apprenticeship Promotion Scheme (NAPS) Portal",
+                "url": "https://www.apprenticeshipindia.gov.in/",
+                "type": "apply",
+                "badge": "Apprenticeship",
+                "description": "Apply for paid industrial apprenticeships with government stipend contribution"
+          },
+          {
+                "title": "DigiLocker Verifiable Skill Badges & Certificates",
+                "url": "https://www.digilocker.gov.in/",
+                "type": "docs",
+                "badge": "DigiLocker",
+                "description": "Download tamper-proof QR-coded NSQF credentials to your national digital locker"
+          },
+          {
+                "title": "Ministry of Skill Development & Entrepreneurship (MSDE)",
+                "url": "https://www.msde.gov.in/",
+                "type": "portal",
+                "badge": "Ministry Portal",
+                "description": "National policy on skill development, Rozgar Melas & international placement"
+          }
+    ],
     disbursalTimeline: 'Instant digital certificate upon passing online assessment; monthly stipend for apprentices',
     processingFee: '₹0 (Free government service)',
     applicationSteps: [
@@ -1209,13 +1765,44 @@ export const SCHEMES: Scheme[] = [
       requiresNonTaxpayer: true
     },
     documentsRequired: [
-      { id: '12th-marksheet', name: 'Class 12 Board Exam Marksheet & Roll Number', purpose: 'Verification of 80th percentile merit cutoff', issuer: 'CBSE / ICSE / State Secondary Board', mandatory: true },
-      { id: 'income-cert', name: 'Family Income Certificate (< ₹4.5 Lakh)', purpose: 'Income eligibility verification', issuer: 'Tehsildar / Competent Revenue Authority', mandatory: true },
+      { id: '12th-marksheet', name: 'Class 12 Board Exam Marksheet & Roll Number', purpose: 'Verification of 80th percentile merit cutoff', issuer: 'CBSE / ICSE / State Secondary Board', mandatory: true, downloadUrl: 'https://www.digilocker.gov.in/' },
+      { id: 'income-cert', name: 'Family Income Certificate (< ₹4.5 Lakh)', purpose: 'Income eligibility verification', issuer: 'Tehsildar / Competent Revenue Authority', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
       { id: 'college-bonafide', name: 'College Admission Bonafide & Fee Receipt', purpose: 'Proof of regular enrollment in recognized college/university', issuer: 'College Principal / Registrar', mandatory: true },
-      { id: 'aadhaar-seeded-bank', name: 'Aadhaar Seeded Student Bank Account Passbook', purpose: 'Mandatory for scholarship DBT transfer via PFMS', issuer: 'Any Scheduled Commercial Bank', mandatory: true }
+      { id: 'aadhaar-seeded-bank', name: 'Aadhaar Seeded Student Bank Account Passbook', purpose: 'Mandatory for scholarship DBT transfer via PFMS', issuer: 'Any Scheduled Commercial Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://scholarships.gov.in/',
+    helplineNumber: '0120-6619540 (NSP Helpdesk)',
+    officialLinks: [
+          {
+                "title": "Apply on National Scholarship Portal (scholarships.gov.in)",
+                "url": "https://scholarships.gov.in/",
+                "type": "apply",
+                "badge": "NSP Apply",
+                "description": "Submit application under Department of Higher Education -> Central Sector Scheme"
+          },
+          {
+                "title": "Higher Education Department Scholarship Guidelines",
+                "url": "https://www.education.gov.in/scholarships-education-loan-0",
+                "type": "guidelines",
+                "badge": "Guidelines",
+                "description": "Eligibility criteria, 80th percentile cutoff norms & renewal guidelines"
+          },
+          {
+                "title": "Track Scholarship DBT via PFMS Portal",
+                "url": "https://pfms.nic.in/static/NewLayout_KnowYourPayments.aspx",
+                "type": "status",
+                "badge": "Payment Tracker",
+                "description": "Check bank transfer status for ₹12,000 (UG) and ₹20,000 (PG) payments"
+          },
+          {
+                "title": "NSP Institute & College Nodal Officer Portal",
+                "url": "https://scholarships.gov.in/",
+                "type": "portal",
+                "badge": "Institute Login",
+                "description": "Colleges verify bonafide status and forward student applications"
+          }
+    ],
     disbursalTimeline: 'Direct bank release through National Scholarship Portal within 2-3 months of institute verification',
     processingFee: '₹0 (Free government scholarship application)',
     applicationSteps: [
@@ -1266,13 +1853,37 @@ export const SCHEMES: Scheme[] = [
       maxAnnualIncome: 350000
     },
     documentsRequired: [
-      { id: 'class8-marksheet', name: 'Class 8 Report Card / Marksheet (≥ 55% marks)', purpose: 'Academic eligibility verification (50% for SC/ST)', issuer: 'School Headmaster / Principal', mandatory: true },
-      { id: 'income-cert', name: 'Parental Income Certificate (≤ ₹3.5 Lakh)', purpose: 'Means eligibility verification', issuer: 'Revenue Officer / Tehsildar', mandatory: true },
-      { id: 'caste-cert', name: 'Caste Certificate (For SC / ST / OBC / EWS)', purpose: 'Category quota verification if applicable', issuer: 'Competent Authority', mandatory: false },
-      { id: 'student-bank', name: 'Student Bank Account (Joint with Parent or Individual)', purpose: 'DBT scholarship crediting', issuer: 'Bank / Post Office', mandatory: true }
+      { id: 'class8-marksheet', name: 'Class 8 Report Card / Marksheet (≥ 55% marks)', purpose: 'Academic eligibility verification (50% for SC/ST)', issuer: 'School Headmaster / Principal', mandatory: true, downloadUrl: 'https://www.digilocker.gov.in/' },
+      { id: 'income-cert', name: 'Parental Income Certificate (≤ ₹3.5 Lakh)', purpose: 'Means eligibility verification', issuer: 'Revenue Officer / Tehsildar', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
+      { id: 'caste-cert', name: 'Caste Certificate (For SC / ST / OBC / EWS)', purpose: 'Category quota verification if applicable', issuer: 'Competent Authority', mandatory: false, downloadUrl: 'https://services.india.gov.in/' },
+      { id: 'student-bank', name: 'Student Bank Account (Joint with Parent or Individual)', purpose: 'DBT scholarship crediting', issuer: 'Bank / Post Office', mandatory: true, downloadUrl: 'https://pfms.nic.in/static/NewLayout_KnowYourPayments.aspx' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://scholarships.gov.in/',
+    helplineNumber: '0120-6619540 (National Scholarship Portal)',
+    officialLinks: [
+          {
+                "title": "Apply / Register on National Scholarship Portal",
+                "url": "https://scholarships.gov.in/",
+                "type": "apply",
+                "badge": "NSP Portal",
+                "description": "Class 9 to 12 students qualifying State MAT/SAT exams register for ₹12,000/yr aid"
+          },
+          {
+                "title": "Department of School Education NMMSS Guidelines",
+                "url": "https://www.education.gov.in/en/national-means-cum-merit-scholarship-scheme",
+                "type": "guidelines",
+                "badge": "Official PDF",
+                "description": "Scheme norms, quota per State/UT, and quota rules for economically weaker sections"
+          },
+          {
+                "title": "PFMS Public Financial Management DBT Status",
+                "url": "https://pfms.nic.in/",
+                "type": "status",
+                "badge": "DBT Credit",
+                "description": "Verify quarterly/annual scholarship credit in student or joint savings bank account"
+          }
+    ],
     disbursalTimeline: 'Quarterly or annual DBT installment transferred directly to the student\'s account',
     processingFee: '₹0 (Free government application)',
     applicationSteps: [
@@ -1324,13 +1935,44 @@ export const SCHEMES: Scheme[] = [
       maxAnnualIncome: 800000
     },
     documentsRequired: [
-      { id: '10th-12th-marksheet', name: '10th & 12th / ITI Marksheet', purpose: 'Qualifying exam score verification', issuer: 'Recognized Board', mandatory: true },
+      { id: '10th-12th-marksheet', name: '10th & 12th / ITI Marksheet', purpose: 'Qualifying exam score verification', issuer: 'Recognized Board', mandatory: true, downloadUrl: 'https://www.digilocker.gov.in/' },
       { id: 'allotment-letter', name: 'Centralized Admission Allotment Letter', purpose: 'Proof of merit admission in AICTE-approved college', issuer: 'State CET / JoSAA / DTE Admission Cell', mandatory: true },
-      { id: 'income-cert', name: 'Parental Annual Income Certificate (< ₹8 Lakh)', purpose: 'Income eligibility verification', issuer: 'Tehsildar / Sub-Divisional Magistrate', mandatory: true },
+      { id: 'income-cert', name: 'Parental Annual Income Certificate (< ₹8 Lakh)', purpose: 'Income eligibility verification', issuer: 'Tehsildar / Sub-Divisional Magistrate', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
       { id: 'bonafide-cert', name: 'Bonafide Certificate & Tuition Fee Receipt', purpose: 'Ongoing enrollment verification', issuer: 'College Principal', mandatory: true }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://scholarships.gov.in/',
+    helplineNumber: '011-29581000 / 0120-6619540',
+    officialLinks: [
+          {
+                "title": "Apply Online on National Scholarship Portal",
+                "url": "https://scholarships.gov.in/",
+                "type": "apply",
+                "badge": "NSP Pragati",
+                "description": "Apply under AICTE Schemes -> Pragati Scholarship for Girl Students"
+          },
+          {
+                "title": "AICTE Pragati Official Scheme Guidelines",
+                "url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+                "type": "guidelines",
+                "badge": "AICTE Guidelines",
+                "description": "₹50,000 annual lump-sum aid guidelines for technical degree and diploma girls"
+          },
+          {
+                "title": "Check AICTE Approved Technical Colleges List",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.org.in/index.php",
+                "type": "portal",
+                "badge": "Approved Colleges",
+                "description": "Verify if your engineering/polytechnic college is recognized by AICTE"
+          },
+          {
+                "title": "AICTE Student Development Schemes Portal",
+                "url": "https://www.aicte-india.org/schemes/students-development-schemes",
+                "type": "portal",
+                "badge": "AICTE Portal",
+                "description": "Student support schemes, internships, and research grants"
+          }
+    ],
     disbursalTimeline: 'Annual single-tranche DBT transfer directly into the girl student\'s bank account',
     processingFee: '₹0 (Free government application)',
     applicationSteps: [
@@ -1383,13 +2025,44 @@ export const SCHEMES: Scheme[] = [
       maxAnnualIncome: 250000
     },
     documentsRequired: [
-      { id: 'caste-cert', name: 'OBC / EBC / DNT Category Certificate', purpose: 'Community reservation verification', issuer: 'Competent District Magistrate / Tehsildar', mandatory: true },
-      { id: 'income-cert', name: 'Annual Income Certificate (≤ ₹2.5 Lakh)', purpose: 'Income ceiling proof', issuer: 'Revenue Authority', mandatory: true },
+      { id: 'caste-cert', name: 'OBC / EBC / DNT Category Certificate', purpose: 'Community reservation verification', issuer: 'Competent District Magistrate / Tehsildar', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
+      { id: 'income-cert', name: 'Annual Income Certificate (≤ ₹2.5 Lakh)', purpose: 'Income ceiling proof', issuer: 'Revenue Authority', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
       { id: 'academic-marksheet', name: 'Previous Class Passing Marksheet (≥ 60% marks)', purpose: 'Academic merit verification', issuer: 'School / University', mandatory: true },
-      { id: 'bank-passbook', name: 'Aadhaar-linked Bank Account Passbook', purpose: 'Direct Benefit Transfer (DBT)', issuer: 'Scheduled Bank', mandatory: true }
+      { id: 'bank-passbook', name: 'Aadhaar-linked Bank Account Passbook', purpose: 'Direct Benefit Transfer (DBT)', issuer: 'Scheduled Bank', mandatory: true, downloadUrl: 'https://myaadhaar.uidai.gov.in/check-aadhaar-banking-status' }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://yet.nta.ac.in/',
+    helplineNumber: '011-40759000 / 011-69227700 (National Testing Agency)',
+    officialLinks: [
+          {
+                "title": "NTA YET Official Portal (PM YASASVI)",
+                "url": "https://yet.nta.ac.in/",
+                "type": "apply",
+                "badge": "NTA Portal",
+                "description": "Candidate registration, examination schedule, admit cards, and merit lists"
+          },
+          {
+                "title": "National Scholarship Portal PM-YASASVI Section",
+                "url": "https://scholarships.gov.in/",
+                "type": "apply",
+                "badge": "NSP Section",
+                "description": "Direct scholarship claim submission for shortlisted OBC, EBC & DNT students"
+          },
+          {
+                "title": "Ministry of Social Justice & Empowerment Portal",
+                "url": "https://socialjustice.gov.in/",
+                "type": "portal",
+                "badge": "Ministry Portal",
+                "description": "Top-class education institutions list and full tuition reimbursement guidelines"
+          },
+          {
+                "title": "PM-YASASVI Information Bulletin & Empaneled Schools",
+                "url": "https://yet.nta.ac.in/",
+                "type": "guidelines",
+                "badge": "Brochure PDF",
+                "description": "List of premier residential schools and universities covered under PM YASASVI"
+          }
+    ],
     disbursalTimeline: 'Disbursed directly into student account via PFMS in 2 tranches per academic year',
     processingFee: '₹0 (Free government application)',
     applicationSteps: [
@@ -1442,12 +2115,43 @@ export const SCHEMES: Scheme[] = [
     },
     documentsRequired: [
       { id: 'admission-proof', name: 'College Admission Letter & Course Fee Structure', purpose: 'Verification of professional degree course', issuer: 'Recognized College / University', mandatory: true },
-      { id: 'income-cert', name: 'Income Certificate from Authorized State Authority', purpose: 'Income ceiling (≤ ₹4.5 Lakh) verification for interest waiver', issuer: 'Tehsildar / SDO', mandatory: true },
+      { id: 'income-cert', name: 'Income Certificate from Authorized State Authority', purpose: 'Income ceiling (≤ ₹4.5 Lakh) verification for interest waiver', issuer: 'Tehsildar / SDO', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
       { id: 'loan-sanction', name: 'Bank Education Loan Sanction Letter', purpose: 'Proof of IBA model education loan', issuer: 'Any Scheduled Bank', mandatory: true },
       { id: 'aadhaar-pan', name: 'Aadhaar & PAN Card of Student & Co-borrower', purpose: 'KYC and credit check', issuer: 'UIDAI & Income Tax Dept', mandatory: true }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://www.vidyalakshmi.co.in/',
+    helplineNumber: '022-24994200 / support@vidyalakshmi.co.in',
+    officialLinks: [
+          {
+                "title": "PM-Vidyalaxmi Education Loan Portal",
+                "url": "https://www.vidyalakshmi.co.in/",
+                "type": "apply",
+                "badge": "Loan Portal",
+                "description": "Single-window electronic platform for education loans across 40+ scheduled banks"
+          },
+          {
+                "title": "Common Educational Loan Application Form (CELAF)",
+                "url": "https://www.vidyalakshmi.co.in/Students/",
+                "type": "apply",
+                "badge": "Common Form",
+                "description": "Fill 1 application to apply to multiple banks with Central Sector Interest Subsidy (CSIS)"
+          },
+          {
+                "title": "Search Registered Bank Schemes & Interest Rates",
+                "url": "https://www.vidyalakshmi.co.in/Students/scheme-search",
+                "type": "portal",
+                "badge": "Bank Comparison",
+                "description": "Compare interest rates, loan limits, and collateral requirements"
+          },
+          {
+                "title": "Canara Bank CSIS Nodal Agency Portal",
+                "url": "https://canarabank.com/",
+                "type": "guidelines",
+                "badge": "Nodal Bank",
+                "description": "Interest subsidy reimbursement guidelines for professional & technical degrees"
+          }
+    ],
     disbursalTimeline: 'Interest subsidy credited directly to student loan account by Canara Bank (Nodal Agency)',
     processingFee: '₹0 (Free portal registration)',
     applicationSteps: [
@@ -1499,13 +2203,44 @@ export const SCHEMES: Scheme[] = [
       maxAnnualIncome: 800000
     },
     documentsRequired: [
-      { id: 'disability-cert', name: 'Unique Disability ID (UDID) / Disability Certificate (≥ 40%)', purpose: 'Proof of benchmark disability', issuer: 'District Medical Board / Competent Hospital Authority', mandatory: true },
+      { id: 'disability-cert', name: 'Unique Disability ID (UDID) / Disability Certificate (≥ 40%)', purpose: 'Proof of benchmark disability', issuer: 'District Medical Board / Competent Hospital Authority', mandatory: true, downloadUrl: 'https://www.swavlambancard.gov.in/' },
       { id: 'admission-letter', name: 'Centralized Technical Admission Allotment Letter', purpose: 'Proof of merit admission in AICTE-approved college', issuer: 'State CET / JoSAA / Central Counseling Cell', mandatory: true },
-      { id: 'income-cert', name: 'Family Income Certificate (< ₹8 Lakh)', purpose: 'Income ceiling proof', issuer: 'Tehsildar / SDO', mandatory: true },
+      { id: 'income-cert', name: 'Family Income Certificate (< ₹8 Lakh)', purpose: 'Income ceiling proof', issuer: 'Tehsildar / SDO', mandatory: true, downloadUrl: 'https://services.india.gov.in/' },
       { id: 'college-bonafide', name: 'College Bonafide Certificate & Fee Receipt', purpose: 'Proof of active enrollment', issuer: 'College Principal', mandatory: true }
     ],
     applicationMode: 'Online Portal',
     applicationUrl: 'https://scholarships.gov.in/',
+    helplineNumber: '011-29581000 / 0120-6619540',
+    officialLinks: [
+          {
+                "title": "Apply on National Scholarship Portal",
+                "url": "https://scholarships.gov.in/",
+                "type": "apply",
+                "badge": "NSP Apply",
+                "description": "Apply under AICTE Schemes -> Saksham Scholarship for Specially-Abled Students"
+          },
+          {
+                "title": "AICTE Saksham Official Scheme Guidelines",
+                "url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+                "type": "guidelines",
+                "badge": "AICTE Guidelines",
+                "description": "₹50,000/year grant for assistive aids, fees, and study equipment for PwD students"
+          },
+          {
+                "title": "Swavlamban UDID Portal (Apply for Disability ID)",
+                "url": "https://www.swavlambancard.gov.in/",
+                "type": "docs",
+                "badge": "UDID Card",
+                "description": "Apply or download digital Unique Disability Identity Card (UDID)"
+          },
+          {
+                "title": "AICTE Student Development Schemes Helpdesk",
+                "url": "https://www.aicte-india.org/",
+                "type": "portal",
+                "badge": "Helpdesk",
+                "description": "Contact nodal officers and track disbursement status"
+          }
+    ],
     disbursalTimeline: 'Annual lump sum credited directly into the student\'s bank account upon institute online verification',
     processingFee: '₹0 (Free government scholarship)',
     applicationSteps: [

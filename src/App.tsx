@@ -13,6 +13,7 @@ import { DocumentChecklist } from './components/DocumentChecklist';
 import { AIAdvisor } from './components/AIAdvisor';
 import { SchemeDetailModal } from './components/SchemeDetailModal';
 import { PrintDossier } from './components/PrintDossier';
+import { OfficialPortalsModal } from './components/OfficialPortalsModal';
 import {
   Landmark,
   ShieldCheck,
@@ -69,6 +70,9 @@ function AppContent() {
 
   // Print modal toggle
   const [showPrintModal, setShowPrintModal] = useState<boolean>(false);
+
+  // Official portals hub modal toggle
+  const [showPortalsModal, setShowPortalsModal] = useState<boolean>(false);
 
   // Accessibility font size
   const [fontSize, setFontSize] = useState<'normal' | 'large' | 'xlarge'>('normal');
@@ -178,6 +182,7 @@ function AppContent() {
         bookmarksCount={bookmarks.length}
         onSelectPersona={handleSelectPersona}
         onOpenPrint={() => setShowPrintModal(true)}
+        onOpenPortalsDirectory={() => setShowPortalsModal(true)}
         fontSize={fontSize}
         setFontSize={setFontSize}
       />
@@ -240,6 +245,7 @@ function AppContent() {
             compareList={compareList}
             onToggleCompare={toggleCompare}
             onGoToScreener={() => setActiveTab('screener')}
+            onOpenPortalsDirectory={() => setShowPortalsModal(true)}
           />
         )}
 
@@ -286,6 +292,12 @@ function AppContent() {
         />
       )}
 
+      {/* Official Government Portals & Direct Links Modal */}
+      <OfficialPortalsModal
+        isOpen={showPortalsModal}
+        onClose={() => setShowPortalsModal(false)}
+      />
+
       {/* Civic Public Service Footer */}
       <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 text-xs py-10 mt-12 no-print">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -330,6 +342,15 @@ function AppContent() {
                     <span>DBT Bharat Direct Transfer</span>
                     <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                   </a>
+                </li>
+                <li className="pt-1.5 border-t border-slate-800">
+                  <button
+                    type="button"
+                    onClick={() => setShowPortalsModal(true)}
+                    className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 text-[11px] cursor-pointer"
+                  >
+                    <span>All Portals & Links Hub ↗</span>
+                  </button>
                 </li>
               </ul>
             </div>

@@ -12,7 +12,8 @@ import {
   Square,
   Building2,
   Clock,
-  ArrowUpRight
+  ArrowUpRight,
+  Globe
 } from 'lucide-react';
 
 interface SchemeCardProps {
@@ -39,6 +40,14 @@ export const SchemeCard: React.FC<SchemeCardProps> = ({
   const isEligible = status === 'eligible';
   const isConditional = status === 'conditional';
   const isIneligible = status === 'ineligible';
+
+  const portalDomain = React.useMemo(() => {
+    try {
+      return new URL(scheme.applicationUrl).hostname.replace(/^www\./, '');
+    } catch {
+      return 'Official Portal';
+    }
+  }, [scheme.applicationUrl]);
 
   return (
     <div
@@ -123,6 +132,30 @@ export const SchemeCard: React.FC<SchemeCardProps> = ({
               {scheme.hindiName}
             </p>
           )}
+          {/* Direct Domain Link Pill */}
+          <div className="flex items-center gap-2 mt-2 flex-wrap">
+            <a
+              href={scheme.applicationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-800 hover:text-emerald-900 bg-emerald-50 hover:bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200 transition-colors"
+              title={`Visit official government site: ${scheme.applicationUrl}`}
+            >
+              <Globe className="w-3 h-3 text-emerald-600 shrink-0" />
+              <span className="font-mono">{portalDomain}</span>
+              <ArrowUpRight className="w-3 h-3 text-emerald-600 shrink-0" />
+            </a>
+            {scheme.officialLinks && scheme.officialLinks.length > 1 && (
+              <button
+                type="button"
+                onClick={() => onOpenDetails(scheme)}
+                className="text-[10px] text-slate-500 hover:text-emerald-700 font-medium cursor-pointer"
+              >
+                +{scheme.officialLinks.length - 1} direct links
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Benefit Highlight Box */}
@@ -205,20 +238,27 @@ export const SchemeCard: React.FC<SchemeCardProps> = ({
       </div>
 
       {/* Card Footer Actions */}
-      <div className="px-5 py-3 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between gap-3 text-xs">
-        <span className="text-slate-500 flex items-center gap-1 text-[11px]">
-          <Clock className="w-3 h-3 text-slate-400" />
-          <span>{scheme.processingFee}</span>
-        </span>
-
+      <div className="px-4 sm:px-5 py-3 bg-slate-50/90 border-t border-slate-100 flex items-center justify-between gap-2 text-xs">
         <button
           type="button"
           onClick={() => onOpenDetails(scheme)}
-          className="flex items-center gap-1 font-semibold text-emerald-700 hover:text-emerald-800 transition-colors py-1 cursor-pointer"
+          className="flex items-center gap-1 font-semibold text-slate-700 hover:text-emerald-800 transition-colors py-1 cursor-pointer"
         >
-          <span>View Guidelines</span>
+          <span>Guidelines</span>
           <ChevronRight className="w-3.5 h-3.5" />
         </button>
+
+        <a
+          href={scheme.applicationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs shadow-xs transition-colors cursor-pointer"
+          title={`Visit ${scheme.shortName} official application portal`}
+        >
+          <span>Apply / Portal</span>
+          <ExternalLink className="w-3 h-3" />
+        </a>
       </div>
     </div>
   );

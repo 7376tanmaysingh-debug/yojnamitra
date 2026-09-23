@@ -112,6 +112,7 @@ export interface SchemeDocument {
   purpose: string;
   issuer: string;
   mandatory: boolean;
+  downloadUrl?: string;
 }
 
 export type StickerTheme =
@@ -133,6 +134,14 @@ export interface SchemeSticker {
   theme: StickerTheme;
 }
 
+export interface SchemeOfficialLink {
+  title: string;
+  url: string;
+  type: 'apply' | 'status' | 'guidelines' | 'helpline' | 'portal' | 'docs';
+  description?: string;
+  badge?: string;
+}
+
 export interface Scheme {
   id: string;
   name: string;
@@ -151,6 +160,8 @@ export interface Scheme {
   documentsRequired: SchemeDocument[];
   applicationMode: 'Online Portal' | 'CSC / Common Service Center' | 'Bank Branch' | 'Gram Panchayat' | 'District Welfare Office';
   applicationUrl: string;
+  officialLinks?: SchemeOfficialLink[];
+  helplineNumber?: string;
   disbursalTimeline: string;
   processingFee: string;
   applicationSteps: string[];

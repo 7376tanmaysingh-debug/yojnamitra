@@ -22,6 +22,7 @@ interface DocAggregateItem {
   purpose: string;
   issuer: string;
   mandatory: boolean;
+  downloadUrl?: string;
   requiredBySchemes: string[];
 }
 
@@ -60,9 +61,13 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ eligibleRe
         if (!existing.requiredBySchemes.includes(res.scheme.shortName)) {
           existing.requiredBySchemes.push(res.scheme.shortName);
         }
+        if (!existing.downloadUrl && doc.downloadUrl) {
+          existing.downloadUrl = doc.downloadUrl;
+        }
       } else {
         docMap.set(doc.id, {
           ...doc,
+          downloadUrl: doc.downloadUrl,
           requiredBySchemes: [res.scheme.shortName],
         });
       }
@@ -173,10 +178,26 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ eligibleRe
                   </span>
                 </div>
 
-                {/* Issuing Authority */}
-                <div className="text-[11px] text-slate-600 mt-2 bg-slate-100/70 px-2.5 py-1 rounded">
-                  <span className="text-slate-400">Issuing Authority / Portal:</span>{' '}
-                  <span className="font-medium text-slate-700">{doc.issuer}</span>
+                {/* Issuing Authority & Direct Verification / Download Link */}
+                <div className="text-[11px] text-slate-600 mt-2 bg-slate-100/70 px-2.5 py-1.5 rounded flex items-center justify-between gap-2 flex-wrap">
+                  <div>
+                    <span className="text-slate-400">Issuing Authority:</span>{' '}
+                    <span className="font-medium text-slate-700">{doc.issuer}</span>
+                  </div>
+
+                  {doc.downloadUrl && (
+                    <a
+                      href={doc.downloadUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 font-semibold text-emerald-800 hover:text-emerald-950 bg-emerald-50 hover:bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200 transition-colors shrink-0"
+                      title="Open issuing portal in new tab"
+                    >
+                      <span>Get / Verify Online</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </div>
 
