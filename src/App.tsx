@@ -206,7 +206,7 @@ function AppContent() {
                   <strong className="text-emerald-700 capitalize">
                     {user.authProvider === 'mobile_otp' ? t.tabMobileOtp : user.authProvider}
                   </strong>{' '}
-                  · Full site access unlocked · 20+ statutory schemes active
+                  · Full site access unlocked · 28+ statutory schemes active
                 </span>
               </div>
             </div>

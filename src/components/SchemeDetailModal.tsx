@@ -1,5 +1,6 @@
 import React from 'react';
 import { Scheme, MatchResult } from '../types';
+import { SchemeSticker } from './SchemeSticker';
 import {
   X,
   ExternalLink,
@@ -90,6 +91,11 @@ export const SchemeDetailModal: React.FC<SchemeDetailModalProps> = ({
 
         {/* Modal Scrollable Body */}
         <div className="p-5 sm:p-6 overflow-y-auto space-y-6 text-slate-800 text-sm">
+          {/* Official Entitlement Sticker Seal */}
+          {scheme.sticker && (
+            <SchemeSticker sticker={scheme.sticker} variant="modal" />
+          )}
+
           {/* Eligibility Status Banner */}
           {matchResult && (
             <div

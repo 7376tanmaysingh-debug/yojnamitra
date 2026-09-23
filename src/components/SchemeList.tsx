@@ -40,15 +40,15 @@ export const SchemeList: React.FC<SchemeListProps> = ({
 
   const categories = [
     'All',
+    'Education',
+    'Employment & Skills',
     'Health',
     'Agriculture',
     'Housing',
     'Business & MSME',
     'Women & Child',
-    'Education',
     'Pensions & Elderly',
     'Social Welfare',
-    'Employment & Skills',
   ];
 
   const counts = useMemo(() => {
@@ -83,7 +83,12 @@ export const SchemeList: React.FC<SchemeListProps> = ({
           const matchDesc = res.scheme.description.toLowerCase().includes(q);
           const matchTags = res.scheme.tags.some((t) => t.toLowerCase().includes(q));
           const matchMinistry = res.scheme.ministry.toLowerCase().includes(q);
-          if (!matchName && !matchHindi && !matchDesc && !matchTags && !matchMinistry) {
+          const matchSticker = res.scheme.sticker
+            ? (res.scheme.sticker.badge.toLowerCase().includes(q) ||
+               res.scheme.sticker.title.toLowerCase().includes(q) ||
+               res.scheme.sticker.tagline.toLowerCase().includes(q))
+            : false;
+          if (!matchName && !matchHindi && !matchDesc && !matchTags && !matchMinistry && !matchSticker) {
             return false;
           }
         }
@@ -148,6 +153,55 @@ export const SchemeList: React.FC<SchemeListProps> = ({
               <option value="name">{t.sortAlphabetical}</option>
             </select>
           </div>
+        </div>
+
+        {/* Quick Discovery Tags for Education, Internship & Skills */}
+        <div className="flex items-center gap-1.5 flex-wrap text-xs text-slate-600">
+          <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Quick:</span>
+          <button
+            type="button"
+            onClick={() => { setSearchQuery('Scholarship'); setSelectedCategory('All'); }}
+            className={`px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors cursor-pointer ${
+              searchQuery.toLowerCase() === 'scholarship'
+                ? 'bg-amber-100 text-amber-900 font-bold ring-1 ring-amber-400'
+                : 'bg-amber-50 text-amber-800 hover:bg-amber-100'
+            }`}
+          >
+            🎓 Scholarships
+          </button>
+          <button
+            type="button"
+            onClick={() => { setSearchQuery('Internship'); setSelectedCategory('All'); }}
+            className={`px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors cursor-pointer ${
+              searchQuery.toLowerCase() === 'internship'
+                ? 'bg-indigo-100 text-indigo-900 font-bold ring-1 ring-indigo-400'
+                : 'bg-indigo-50 text-indigo-800 hover:bg-indigo-100'
+            }`}
+          >
+            💼 PM Internship (₹66k/yr)
+          </button>
+          <button
+            type="button"
+            onClick={() => { setSearchQuery('Skill'); setSelectedCategory('All'); }}
+            className={`px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors cursor-pointer ${
+              searchQuery.toLowerCase() === 'skill'
+                ? 'bg-emerald-100 text-emerald-900 font-bold ring-1 ring-emerald-400'
+                : 'bg-emerald-50 text-emerald-800 hover:bg-emerald-100'
+            }`}
+          >
+            ⚡ Skill India & Certificates
+          </button>
+          <button
+            type="button"
+            onClick={() => { setSearchQuery(''); setSelectedCategory('Education'); }}
+            className={`px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors cursor-pointer ${
+              selectedCategory === 'Education'
+                ? 'bg-blue-100 text-blue-900 font-bold ring-1 ring-blue-400'
+                : 'bg-blue-50 text-blue-800 hover:bg-blue-100'
+            }`}
+          >
+            📚 Education Schemes
+          </button>
         </div>
 
         {/* Status Segmented Control (Interactive buttons) */}

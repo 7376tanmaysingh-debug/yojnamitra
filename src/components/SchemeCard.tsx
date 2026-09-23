@@ -1,5 +1,6 @@
 import React from 'react';
 import { MatchResult, Scheme } from '../types';
+import { SchemeSticker } from './SchemeSticker';
 import {
   CheckCircle2,
   AlertTriangle,
@@ -97,6 +98,17 @@ export const SchemeCard: React.FC<SchemeCardProps> = ({
             </button>
           </div>
         </div>
+
+        {/* Tactile Holographic / Die-Cut Scheme Sticker */}
+        {scheme.sticker && (
+          <div
+            onClick={() => onOpenDetails(scheme)}
+            className="mb-3 cursor-pointer"
+            title="Click to view full statutory scheme details"
+          >
+            <SchemeSticker sticker={scheme.sticker} variant="card" />
+          </div>
+        )}
 
         {/* Scheme Title */}
         <div className="mb-2.5">

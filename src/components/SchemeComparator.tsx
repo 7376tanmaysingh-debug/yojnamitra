@@ -1,5 +1,6 @@
 import React from 'react';
 import { Scheme } from '../types';
+import { SchemeSticker } from './SchemeSticker';
 import { Check, X, ExternalLink, Trash2, Plus, Building2, Clock, FileText } from 'lucide-react';
 
 interface SchemeComparatorProps {
@@ -82,7 +83,10 @@ export const SchemeComparator: React.FC<SchemeComparatorProps> = ({
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <span className="text-sm block leading-snug">{scheme.name}</span>
-                        <span className="text-[11px] font-normal text-slate-500">{scheme.ministry}</span>
+                        <span className="text-[11px] font-normal text-slate-500 block mb-1.5">{scheme.ministry}</span>
+                        {scheme.sticker && (
+                          <SchemeSticker sticker={scheme.sticker} variant="compact" />
+                        )}
                       </div>
                       <button
                         type="button"

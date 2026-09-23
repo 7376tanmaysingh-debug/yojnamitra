@@ -12,6 +12,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Insurance & Cover',
     monetaryValueEstimate: 500000,
     monetaryValueDisplay: '₹5,00,000 / family / year',
+    sticker: {
+      emoji: '🏥',
+      badge: '100% CASHLESS',
+      title: '₹5 Lakh Annual Family Health Cover',
+      tagline: 'Zero Hospital Bills · PM-JAY Gold Card',
+      theme: 'rose',
+    },
     description: 'World’s largest government-funded health assurance scheme providing secondary and tertiary cashless inpatient care hospitalization at empaneled public and private hospitals across India.',
     keyBenefits: [
       'Cashless & paperless treatment up to ₹5 Lakh annually per eligible household',
@@ -58,6 +65,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Direct Cash Transfer',
     monetaryValueEstimate: 6000,
     monetaryValueDisplay: '₹6,000 / year (₹2,000 every 4 months)',
+    sticker: {
+      emoji: '🌾',
+      badge: 'DIRECT CASH DBT',
+      title: '₹6,000 / Year Assured Income',
+      tagline: '3 Direct Tranches · No Middlemen',
+      theme: 'emerald',
+    },
     description: 'Central sector income support scheme providing ₹6,000 annually in three equal installments of ₹2,000 directly transferred into the bank accounts of all cultivable landholding farmer families.',
     keyBenefits: [
       '₹6,000 guaranteed annual income support deposited directly via DBT',
@@ -103,6 +117,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Asset Subsidy',
     monetaryValueEstimate: 267000,
     monetaryValueDisplay: 'Up to ₹2,67,000 Subsidy / ₹1.3 Lakh Grant',
+    sticker: {
+      emoji: '🏠',
+      badge: 'HOUSING SUBSIDY',
+      title: '₹1.2L to ₹2.5L Pucca Home Grant',
+      tagline: 'Direct Construction Subsidy · Geo-tagged',
+      theme: 'amber',
+    },
     description: 'Affordable housing initiative providing financial assistance for constructing a pucca house with basic amenities (piped water, sanitation, electricity, LPG) to homeless or kutcha house dwellers.',
     keyBenefits: [
       'In Gramin: Direct financial grant of ₹1,20,000 (Plains) or ₹1,30,000 (Hilly/North-East states)',
@@ -150,6 +171,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Subsidized Credit / Loan',
     monetaryValueEstimate: 1000000,
     monetaryValueDisplay: 'Collateral-free loan up to ₹10,00,000 (Expanded to ₹20L)',
+    sticker: {
+      emoji: '💼',
+      badge: 'ZERO COLLATERAL',
+      title: 'Collateral-Free MSME Loan up to ₹20L',
+      tagline: 'Shishu, Kishore & Tarun Business Capital',
+      theme: 'blue',
+    },
     description: 'Provides formal micro-finance credit to non-corporate, non-farm small and micro enterprises across manufacturing, trading, and services without requiring collateral security.',
     keyBenefits: [
       'Zero collateral security or third-party guarantee required',
@@ -197,6 +225,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Direct Cash Transfer',
     monetaryValueEstimate: 1500000,
     monetaryValueDisplay: '8.2% Sovereign Interest + Triple Tax Exemption (EEE)',
+    sticker: {
+      emoji: '🎀',
+      badge: '8.2% TAX-FREE',
+      title: 'Highest Sovereign Growth for Girl Child',
+      tagline: 'Triple Tax Exemption (EEE) · Beti Bachao',
+      theme: 'rose',
+    },
     description: 'Government backed small savings program designed exclusively for parents of girl children to build a dedicated education and marriage corpus with guaranteed high sovereign return.',
     keyBenefits: [
       'Highest sovereign interest rate among small savings schemes (8.2% p.a. compounded annually)',
@@ -241,6 +276,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Subsidized Credit / Loan',
     monetaryValueEstimate: 315000,
     monetaryValueDisplay: '₹15,000 Modern Toolkit + ₹3 Lakh Concessional Loan @ 5%',
+    sticker: {
+      emoji: '🛠️',
+      badge: 'TOOLKIT GRANT',
+      title: '₹15,000 Free Tools + 5% Subsidized Loan',
+      tagline: '18 Traditional Artisan Crafts · PM Skill ID',
+      theme: 'orange',
+    },
     description: 'Holistic scheme providing end-to-end support to traditional artisans and craftspeople across 18 designated trades (Carpenters, Blacksmiths, Potters, Cobblers, Tailors, Weavers, etc.).',
     keyBenefits: [
       'PM Vishwakarma Certificate and ID Card conferring official recognition',
@@ -287,6 +329,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Subsidized Credit / Loan',
     monetaryValueEstimate: 80000,
     monetaryValueDisplay: '₹10,000 -> ₹20,000 -> ₹50,000 Working Capital',
+    sticker: {
+      emoji: '🛒',
+      badge: 'STREET CAPITAL',
+      title: '₹10,000 to ₹50,000 Working Capital',
+      tagline: '7% Interest Subsidy · Digital Cashback',
+      theme: 'teal',
+    },
     description: 'Special micro-credit facility providing affordable collateral-free working capital loans to urban and peri-urban street vendors to resume their livelihoods with 7% interest subsidy.',
     keyBenefits: [
       'First tranche loan of up to ₹10,000 without collateral; on timely repayment unlocks ₹20,000 and ₹50,000 tranches',
@@ -333,6 +382,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Scholarship',
     monetaryValueEstimate: 50000,
     monetaryValueDisplay: 'Full Tuition Fee Reimbursement + Monthly Maintenance Allowance',
+    sticker: {
+      emoji: '📚',
+      badge: 'FULL REIMBURSEMENT',
+      title: '100% Tuition Fee & Maintenance Grant',
+      tagline: 'SC / ST / OBC Post-Matric Scholar Cover',
+      theme: 'purple',
+    },
     description: 'Flagship scholarship scheme supporting post-matriculation / post-secondary education for students from disadvantaged socio-economic backgrounds studying in recognized institutions.',
     keyBenefits: [
       '100% compulsory non-refundable fees reimbursed directly to institution or student',
@@ -383,6 +439,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Monthly Pension',
     monetaryValueEstimate: 60000,
     monetaryValueDisplay: 'Guaranteed ₹1,000 to ₹5,000 / month pension from age 60',
+    sticker: {
+      emoji: '🛡️',
+      badge: 'GUARANTEED PENSION',
+      title: '₹1,000 to ₹5,000 Lifelong Monthly Income',
+      tagline: 'Sovereign Guarantee · Spouse Pension Cover',
+      theme: 'cyan',
+    },
     description: 'Government-backed pension scheme focused on workers in the unorganized sector, guaranteeing a fixed monthly pension from age 60 based on modest monthly contributions during working years.',
     keyBenefits: [
       'Guaranteed fixed pension of ₹1,000, ₹2,000, ₹3,000, ₹4,000, or ₹5,000 per month for life from age 60',
@@ -429,6 +492,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Direct Cash Transfer',
     monetaryValueEstimate: 6000,
     monetaryValueDisplay: '₹5,000 - ₹6,000 Direct Maternity Cash Benefit',
+    sticker: {
+      emoji: '🍼',
+      badge: 'MATERNITY BENEFIT',
+      title: '₹5,000 Direct DBT Mother & Child Aid',
+      tagline: 'Nutritional Support for 1st Living Child',
+      theme: 'rose',
+    },
     description: 'Direct cash incentive scheme for pregnant women and lactating mothers to partially compensate for wage loss, ensure nutritious diet, and promote safe institutional delivery.',
     keyBenefits: [
       '₹5,000 in two installments for first child upon registration, antenatal check-up, and vaccination',
@@ -476,6 +546,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Asset Subsidy',
     monetaryValueEstimate: 3600,
     monetaryValueDisplay: 'Deposit-free LPG Connection + Free Stove & 1st Refill + ₹300 Subsidy/cylinder',
+    sticker: {
+      emoji: '🔥',
+      badge: 'CLEAN FUEL',
+      title: 'Free LPG Gas Cylinder + Free Stove',
+      tagline: 'Zero Security Deposit · Smoke-Free Kitchen',
+      theme: 'amber',
+    },
     description: 'Provides clean cooking fuel (LPG) connections to women from poor and underprivileged households without requiring any upfront security deposit.',
     keyBenefits: [
       'Deposit-free LPG cylinder connection (no security deposit for 14.2kg/5kg cylinder or pressure regulator)',
@@ -521,6 +598,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Subsidized Credit / Loan',
     monetaryValueEstimate: 300000,
     monetaryValueDisplay: 'Subsidized Crop Credit up to ₹3 Lakh at effective 4% Interest',
+    sticker: {
+      emoji: '🚜',
+      badge: '4% SUBSIDIZED',
+      title: 'Low-Interest Agri Credit up to ₹3 Lakh',
+      tagline: 'RuPay Kisan ATM Card · Flexible Repayment',
+      theme: 'emerald',
+    },
     description: 'Provides timely and adequate credit to farmers for crop cultivation, post-harvest expenses, farm asset maintenance, and dairy/animal husbandry at heavily subsidized interest rates.',
     keyBenefits: [
       'Short-term production credit up to ₹3,00,000 at nominal 7% interest rate',
@@ -566,6 +650,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Monthly Pension',
     monetaryValueEstimate: 12000,
     monetaryValueDisplay: '₹1,000 - ₹3,000 / month (Central + State Combined Contribution)',
+    sticker: {
+      emoji: '🧓',
+      badge: 'SENIOR DIGNITY',
+      title: 'Monthly Cash Pension for Elders (60+)',
+      tagline: 'NSAP Direct Benefit Transfer to Bank',
+      theme: 'blue',
+    },
     description: 'Social security monthly pension provided to destitute elderly citizens living below the poverty line to ensure dignity and basic financial independence.',
     keyBenefits: [
       'Monthly direct cash transfer credited directly into senior citizen’s bank or post office account',
@@ -611,6 +702,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Subsidized Credit / Loan',
     monetaryValueEstimate: 5000000,
     monetaryValueDisplay: 'Bank Loans from ₹10 Lakh to ₹1 Crore for Greenfield Enterprises',
+    sticker: {
+      emoji: '🚀',
+      badge: 'GREENFIELD VENTURE',
+      title: '₹10 Lakh to ₹1 Crore Enterprise Loan',
+      tagline: 'SC / ST & Women Entrepreneur Pioneers',
+      theme: 'indigo',
+    },
     description: 'Facilitates bank loans between ₹10 Lakh and ₹1 Crore to at least one Scheduled Caste (SC) or Scheduled Tribe (ST) borrower and at least one Woman borrower per commercial bank branch for setting up a greenfield enterprise.',
     keyBenefits: [
       'Composite loan (term loan + working capital) covering up to 85% of total project cost',
@@ -658,6 +756,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Skill Certification',
     monetaryValueEstimate: 18000,
     monetaryValueDisplay: '100% Free Skill Certification + ₹8,000 Stipend & Job Fair Access',
+    sticker: {
+      emoji: '🏭',
+      badge: 'INDUSTRY 4.0',
+      title: 'Free High-Demand Vocational Skilling',
+      tagline: 'NSQF Certificate + ₹8,000 Cash Reward',
+      theme: 'blue',
+    },
     description: 'Flagship skill certification scheme to enable Indian youth to take up industry-relevant, future-ready skill training (AI, drones, IoT, healthcare, solar, logistics) to secure better livelihoods.',
     keyBenefits: [
       '100% government sponsored free training and assessment',
@@ -703,6 +808,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Free Foodgrains',
     monetaryValueEstimate: 14400,
     monetaryValueDisplay: '5 kg Free Foodgrains / person / month across ANY ration shop in India',
+    sticker: {
+      emoji: '🍚',
+      badge: 'FREE RATION',
+      title: '5kg Free Wheat/Rice Per Person/Month',
+      tagline: 'One Nation One Ration Card · Pan-India Portability',
+      theme: 'emerald',
+    },
     description: 'Guarantees subsidized/free foodgrains (rice, wheat, coarse grains) to vulnerable citizens, with nationwide biometric portability allowing migrant workers to collect rations anywhere in India.',
     keyBenefits: [
       '5 kg of foodgrains per person per month completely free for Priority Households (PHH)',
@@ -748,6 +860,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Monthly Pension',
     monetaryValueEstimate: 18000,
     monetaryValueDisplay: '₹1,000 - ₹3,000 / month + Free Assistive Aids & Rail/Bus Concession',
+    sticker: {
+      emoji: '♿',
+      badge: 'ACCESSIBLE AID',
+      title: 'Disability Pension & National UDID Card',
+      tagline: 'Benchmark 40%+ Disability Dignity Support',
+      theme: 'purple',
+    },
     description: 'Financial assistance and assistive equipment support for persons with severe or multiple disabilities living in poor households, accessible seamlessly via the Unique Disability ID (UDID).',
     keyBenefits: [
       'Monthly direct disability pension credited straight into bank account',
@@ -794,6 +913,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Asset Subsidy',
     monetaryValueEstimate: 78000,
     monetaryValueDisplay: 'Direct Subsidy up to ₹78,000 + Up to 300 Units Free Electricity/month',
+    sticker: {
+      emoji: '☀️',
+      badge: 'ZERO POWER BILL',
+      title: '300 Units Free Power + ₹78,000 Subsidy',
+      tagline: 'Direct Rooftop Solar Bank Disbursal',
+      theme: 'amber',
+    },
     description: 'National solar rooftop initiative providing massive direct subsidies to residential households to install rooftop solar panels, saving electricity bills and generating surplus income.',
     keyBenefits: [
       'Direct government subsidy of ₹30,000 for 1 kW, ₹60,000 for 2 kW, and ₹78,000 for 3 kW and above systems',
@@ -839,6 +965,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Insurance & Cover',
     monetaryValueEstimate: 50000,
     monetaryValueDisplay: 'Full Sum Insured Cover at ultra-low 1.5% - 2% Farmer Premium',
+    sticker: {
+      emoji: '🌦️',
+      badge: 'CROP SHIELD',
+      title: 'Comprehensive Seasonal Crop Insurance',
+      tagline: 'Just 1.5%–2% Premium · Satellite Assessed',
+      theme: 'teal',
+    },
     description: 'Comprehensive risk insurance covering all non-preventable natural risks (drought, flood, unseasonal rains, pest attacks, post-harvest cyclonic damage) from pre-sowing to post-harvest.',
     keyBenefits: [
       'Minimal uniform premium paid by farmer: 2% for Kharif crops, 1.5% for Rabi crops, 5% for annual commercial/horticulture crops',
@@ -885,6 +1018,13 @@ export const SCHEMES: Scheme[] = [
     benefitType: 'Subsidized Credit / Loan',
     monetaryValueEstimate: 200000,
     monetaryValueDisplay: 'Collateral-free SHG Credit up to ₹20 Lakh @ subsidized 7% interest',
+    sticker: {
+      emoji: '👩‍👧‍👧',
+      badge: 'LAKHPATI DIDI',
+      title: '₹1 Lakh+ Annual Income SHG Mission',
+      tagline: 'Collateral-Free ₹10L Credit · Rural Women Micro-Enterprises',
+      theme: 'rose',
+    },
     description: 'Mobilizes rural poor women into Self Help Groups (SHGs) and federations, providing revolving funds, community investment support, and low-interest credit for micro-livelihoods.',
     keyBenefits: [
       'Collateral-free institutional credit up to ₹20 Lakh for women Self Help Groups',
@@ -919,6 +1059,468 @@ export const SCHEMES: Scheme[] = [
       'Applicant is male or lives outside designated rural operational area.'
     ],
     tags: ['Women SHG', 'Lakhpati Didi', 'Micro Enterprise', 'Rural Credit']
+  },
+  {
+    id: 'pm-internship-scheme',
+    name: 'Prime Minister\'s Internship Scheme in Top Companies (PMIS)',
+    hindiName: 'प्रधानमंत्री इंटर्नशिप योजना (पीएमआईएस)',
+    shortName: 'PM Internship Scheme',
+    ministry: 'Ministry of Corporate Affairs (MCA)',
+    level: 'Central',
+    category: 'Employment & Skills',
+    benefitType: 'Internship & Stipend',
+    monetaryValueEstimate: 66000,
+    monetaryValueDisplay: '₹66,000 / year (₹5,000/month stipend + ₹6,000 one-time grant)',
+    sticker: {
+      emoji: '🏢',
+      badge: 'TOP 500 CORPORATE',
+      title: '₹66,000 / yr PM Corporate Internship',
+      tagline: '₹5,000/mo DBT + ₹6k Relocation Grant',
+      theme: 'indigo',
+    },
+    description: 'Flagship national youth empowerment initiative offering 12-month paid internships in India’s top 500 companies (Tata, Reliance, Mahindra, L&T, HDFC, ITC, Maruti, etc.) with hands-on corporate mentorship and insurance coverage.',
+    keyBenefits: [
+      '₹5,000 monthly financial stipend (₹4,500 DBT by Government of India + ₹500 from corporate CSR)',
+      '₹6,000 one-time grant directly disbursed upon joining for incidental, travel, and relocation expenses',
+      '12 months of high-value industry exposure and formal corporate certificate of internship',
+      'Accidental insurance coverage under PM Jeevan Jyoti Bima Yojana and PM Suraksha Bima Yojana fully sponsored by Govt',
+      'Direct placement pathway and corporate networking opportunities for fresh graduates'
+    ],
+    targetAudienceText: 'Youth aged 21-24 years with Class 10/12, ITI, Polytechnic Diploma, or Higher Education Degree (BA, BSc, BCom, BCA, BBA, BPharma) seeking first formal job experience',
+    eligibilityCriteria: {
+      minAge: 21,
+      maxAge: 24,
+      occupations: ['Student', 'Unemployed'],
+      requiresNonTaxpayer: true,
+      maxAnnualIncome: 800000
+    },
+    documentsRequired: [
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Biometric identity & e-KYC verification', issuer: 'UIDAI', mandatory: true },
+      { id: 'edu-cert', name: 'Educational Marksheets / Diploma / Degree Certificate', purpose: 'Proof of Class 10/12/ITI/Diploma/Graduation completion', issuer: 'Recognized Board / University / Technical Board', mandatory: true },
+      { id: 'bank-passbook', name: 'Aadhaar-Seeded Bank Passbook', purpose: 'Direct Benefit Transfer (DBT) of monthly ₹5,000 stipend', issuer: 'Any Scheduled Commercial Bank or Post Office', mandatory: true },
+      { id: 'self-declaration', name: 'Self-Declaration Form', purpose: 'Confirmation of non-taxpayer household & non-govt employee status', issuer: 'Online Portal Self-attestation', mandatory: true }
+    ],
+    applicationMode: 'Online Portal',
+    applicationUrl: 'https://pminternship.mca.gov.in/',
+    disbursalTimeline: 'Monthly DBT stipend credit directly into bank account via PFMS by 7th of every month',
+    processingFee: '₹0 (100% Free Government Portal)',
+    applicationSteps: [
+      'Visit the official portal at pminternship.mca.gov.in and click on "Youth Registration".',
+      'Complete Aadhaar e-KYC via OTP authentication to auto-fetch demographic details.',
+      'Upload academic qualifications (10th, 12th, ITI, Diploma, or Degree marks and passing year).',
+      'Select your preferred corporate sectors, job roles, and locations across India.',
+      'Submit application and track company shortlist interviews and joining letters directly on the portal.'
+    ],
+    commonRejectionReasons: [
+      'Candidate age is below 21 years or exceeds 24 years on the application cutoff date.',
+      'Any immediate family member (self, parents, spouse) is an income taxpayer or regular government employee.',
+      'Enrolled in full-time formal academic education program during the internship tenure.',
+      'Graduates from IITs, IIMs, IISER, National Law Universities, or possessing CA/CMA/MBBS degrees are excluded to prioritize general youth.'
+    ],
+    tags: ['Internship', 'Youth', 'Skill India', 'Monthly Stipend', 'Top 500 Companies', 'Corporate Experience', 'Paid Training']
+  },
+  {
+    id: 'skill-india-digital-certification',
+    name: 'Skill India Digital Hub - Free NSQF Certification & National Apprenticeship',
+    hindiName: 'स्किल इंडिया डिजिटल - निःशुल्क प्रमाणन एवं अप्रेंटिसशिप',
+    shortName: 'Skill India Certification',
+    ministry: 'Ministry of Skill Development and Entrepreneurship (MSDE)',
+    level: 'Central',
+    category: 'Employment & Skills',
+    benefitType: 'Skill Certification',
+    monetaryValueEstimate: 25000,
+    monetaryValueDisplay: '100% Free Govt Certificate + Up to ₹9,000/month Apprenticeship Stipend',
+    sticker: {
+      emoji: '⚡',
+      badge: 'FREE NSQF BADGE',
+      title: 'Govt Certificate + Up to ₹9,000/mo Apprenticeship',
+      tagline: 'DigiLocker QR Verifiable · 1,000+ Online Courses',
+      theme: 'emerald',
+    },
+    description: 'Unified digital skilling ecosystem providing 1,000+ government-certified vocational courses, verifiable NSQF digital skill badges, and National Apprenticeship Promotion Scheme (NAPS) with government stipend support.',
+    keyBenefits: [
+      '100% free access to industry-recognized courses in AI, Cloud, Cybersecurity, Solar, EV, Drone tech, Logistics & Healthcare',
+      'Verifiable QR-coded NSQF Digital Skill Certificate issued directly to applicant\'s DigiLocker',
+      'Direct enrollment in National Apprenticeship Promotion Scheme (NAPS) with up to ₹1,500/month government-funded stipend co-contribution',
+      'Direct interview calls from certified industry partners through integrated Rozgar Melas',
+      'Course content available in 12 Indian regional languages with mobile self-paced learning'
+    ],
+    targetAudienceText: 'Students, job-seekers, ITI trainees, school dropouts, and youth looking to acquire market-relevant vocational skills',
+    eligibilityCriteria: {
+      minAge: 14,
+      maxAge: 45,
+      occupations: ['Student', 'Unemployed', 'Daily Wage / Construction', 'Artisan / Craftsman', 'Small Business / MSME']
+    },
+    documentsRequired: [
+      { id: 'aadhaar', name: 'Aadhaar Card', purpose: 'Digital identity and Skill India Passbook creation', issuer: 'UIDAI', mandatory: true },
+      { id: 'mobile', name: 'Mobile Number', purpose: 'OTP login & course completion progress alerts', issuer: 'Telecom Provider', mandatory: true },
+      { id: 'bank-passbook', name: 'Bank Account Passbook (For Apprenticeship)', purpose: 'Receipt of NAPS stipend direct benefit transfer', issuer: 'Any Scheduled Bank', mandatory: false }
+    ],
+    applicationMode: 'Online Portal',
+    applicationUrl: 'https://www.skillindiadigital.gov.in/',
+    disbursalTimeline: 'Instant digital certificate upon passing online assessment; monthly stipend for apprentices',
+    processingFee: '₹0 (Free government service)',
+    applicationSteps: [
+      'Register for free on skillindiadigital.gov.in using Aadhaar e-KYC or mobile OTP.',
+      'Explore available skill courses by category (Digital, Technical, Green Jobs, Construction, Healthcare).',
+      'Complete interactive video lessons and practical module quizzes on your smartphone or PC.',
+      'Appear for the online assessment exam and receive your NSQF-certified credential on DigiLocker.',
+      'Apply with 1-click for ongoing apprenticeship openings across private and public enterprises.'
+    ],
+    commonRejectionReasons: [
+      'Failure to score the minimum passing threshold (typically 50-60%) in the module final assessment.',
+      'Aadhaar name and date of birth mismatch prevents issuance of verifiable certificate.',
+      'Age below 14 years.'
+    ],
+    tags: ['Skill India', 'Free Certificate', 'Apprenticeship', 'NSQF', 'Vocational Training', 'DigiLocker', 'AI Skills']
+  },
+  {
+    id: 'pm-usp-college-scholarship',
+    name: 'PM-USP: Central Sector Scheme of Scholarship for College and University Students',
+    hindiName: 'पीएम-यूएसपी कॉलेज एवं विश्वविद्यालय छात्रवृत्ति योजना',
+    shortName: 'College Merit Scholarship',
+    ministry: 'Department of Higher Education, Ministry of Education',
+    level: 'Central',
+    category: 'Education',
+    benefitType: 'Scholarship',
+    monetaryValueEstimate: 36000,
+    monetaryValueDisplay: '₹12,000 / year (UG Graduation) & ₹20,000 / year (PG Studies)',
+    sticker: {
+      emoji: '🎓',
+      badge: '80TH PERCENTILE MERIT',
+      title: '₹12,000 to ₹20,000 College Scholarship',
+      tagline: 'Undergraduate & PG Direct PFMS Credit',
+      theme: 'purple',
+    },
+    description: 'Central sector merit-cum-means scholarship supporting meritorious students scoring above the 80th percentile in Class 12 board examinations to pursue regular graduation, professional, and post-graduation degrees.',
+    keyBenefits: [
+      '₹12,000 annually for the first 3 years of undergraduate general/professional college studies',
+      '₹20,000 annually for post-graduate degree studies (or 4th and 5th year of integrated/professional degrees)',
+      '100% Direct Benefit Transfer (DBT) directly credited to student’s personal savings account via PFMS',
+      '82,000 fresh scholarships distributed annually (41,000 boys and 41,000 girls) ensuring gender equity',
+      'Continuous renewal every year upon securing minimum 50% marks and 75% attendance'
+    ],
+    targetAudienceText: 'Meritorious students pursuing regular college/university degree with >80th percentile in 12th board & annual family income under ₹4.5 Lakh',
+    eligibilityCriteria: {
+      occupations: ['Student'],
+      minAge: 17,
+      maxAge: 25,
+      maxAnnualIncome: 450000,
+      requiresNonTaxpayer: true
+    },
+    documentsRequired: [
+      { id: '12th-marksheet', name: 'Class 12 Board Exam Marksheet & Roll Number', purpose: 'Verification of 80th percentile merit cutoff', issuer: 'CBSE / ICSE / State Secondary Board', mandatory: true },
+      { id: 'income-cert', name: 'Family Income Certificate (< ₹4.5 Lakh)', purpose: 'Income eligibility verification', issuer: 'Tehsildar / Competent Revenue Authority', mandatory: true },
+      { id: 'college-bonafide', name: 'College Admission Bonafide & Fee Receipt', purpose: 'Proof of regular enrollment in recognized college/university', issuer: 'College Principal / Registrar', mandatory: true },
+      { id: 'aadhaar-seeded-bank', name: 'Aadhaar Seeded Student Bank Account Passbook', purpose: 'Mandatory for scholarship DBT transfer via PFMS', issuer: 'Any Scheduled Commercial Bank', mandatory: true }
+    ],
+    applicationMode: 'Online Portal',
+    applicationUrl: 'https://scholarships.gov.in/',
+    disbursalTimeline: 'Direct bank release through National Scholarship Portal within 2-3 months of institute verification',
+    processingFee: '₹0 (Free government scholarship application)',
+    applicationSteps: [
+      'Navigate to scholarships.gov.in (National Scholarship Portal) and register as a new student.',
+      'Complete Aadhaar e-KYC and fill academic details including 12th board roll number and year.',
+      'Select "Department of Higher Education -> Central Sector Scheme of Scholarship".',
+      'Upload College Bonafide Certificate and Parental Income Certificate.',
+      'Submit the form; your college nodal officer verifies the application online before state approval.'
+    ],
+    commonRejectionReasons: [
+      'Class 12 board marks below the designated 80th percentile state board cutoff.',
+      'Student is pursuing course through distance learning or correspondence (regular full-time course required).',
+      'Family income exceeds ₹4.5 Lakh per annum.',
+      'Availing any other government central or state scholarship scheme simultaneously.'
+    ],
+    tags: ['Education', 'Scholarship', 'College', 'Graduation', 'Post Graduation', 'Merit Scholarship', 'NSP']
+  },
+  {
+    id: 'nmmss-school-scholarship',
+    name: 'National Means-cum-Merit Scholarship Scheme (NMMSS)',
+    hindiName: 'राष्ट्रीय साधन-सह-योग्यता छात्रवृत्ति योजना',
+    shortName: 'NMMSS School Scholarship',
+    ministry: 'Department of School Education and Literacy, Ministry of Education',
+    level: 'Centrally Sponsored',
+    category: 'Education',
+    benefitType: 'Scholarship',
+    monetaryValueEstimate: 48000,
+    monetaryValueDisplay: '₹12,000 / year (₹1,000 / month from Class 9 to Class 12)',
+    sticker: {
+      emoji: '🎒',
+      badge: 'DROPOUT SHIELD',
+      title: '₹12,000 / Year Secondary School Grant',
+      tagline: 'Class 9 to 12 · ₹1,000/mo Direct Bank Support',
+      theme: 'blue',
+    },
+    description: 'Financial support awarded to meritorious students from economically weaker sections to prevent dropout at Class 8 and encourage them to complete secondary and senior secondary school education up to Class 12.',
+    keyBenefits: [
+      '₹12,000 per annum (₹1,000 per month) directly transferred into student\'s bank account',
+      'Continuous 4-year support across Class 9, Class 10, Class 11, and Class 12',
+      'Helps families cover school tuition fees, books, notebooks, stationery, and uniforms',
+      '1,00,000 fresh meritorious students awarded nationwide every academic year'
+    ],
+    targetAudienceText: 'Meritorious students studying in State Government, Government-aided, and local body schools with parental income <= ₹3.5 Lakh',
+    eligibilityCriteria: {
+      occupations: ['Student'],
+      minAge: 12,
+      maxAge: 19,
+      maxAnnualIncome: 350000
+    },
+    documentsRequired: [
+      { id: 'class8-marksheet', name: 'Class 8 Report Card / Marksheet (≥ 55% marks)', purpose: 'Academic eligibility verification (50% for SC/ST)', issuer: 'School Headmaster / Principal', mandatory: true },
+      { id: 'income-cert', name: 'Parental Income Certificate (≤ ₹3.5 Lakh)', purpose: 'Means eligibility verification', issuer: 'Revenue Officer / Tehsildar', mandatory: true },
+      { id: 'caste-cert', name: 'Caste Certificate (For SC / ST / OBC / EWS)', purpose: 'Category quota verification if applicable', issuer: 'Competent Authority', mandatory: false },
+      { id: 'student-bank', name: 'Student Bank Account (Joint with Parent or Individual)', purpose: 'DBT scholarship crediting', issuer: 'Bank / Post Office', mandatory: true }
+    ],
+    applicationMode: 'Online Portal',
+    applicationUrl: 'https://scholarships.gov.in/',
+    disbursalTimeline: 'Quarterly or annual DBT installment transferred directly to the student\'s account',
+    processingFee: '₹0 (Free government application)',
+    applicationSteps: [
+      'Appear for the State-level NMMSS Mental Ability Test (MAT) and Scholastic Aptitude Test (SAT) in Class 8.',
+      'Upon qualifying in the merit list, register on the National Scholarship Portal (scholarships.gov.in).',
+      'Submit student bank account and Aadhaar details for DBT verification.',
+      'School headmaster verifies and forwards the application to District Education Officer (DEO).',
+      'Scholarship amount is credited directly via Public Financial Management System (PFMS).'
+    ],
+    commonRejectionReasons: [
+      'Students studying in Kendriya Vidyalayas, Navodaya Vidyalayas, or residential schools run by Govt where boarding/lodging is free.',
+      'Students studying in private un-aided schools.',
+      'Parental annual income exceeding ₹3,50,000.'
+    ],
+    tags: ['Education', 'School Scholarship', 'Class 9 to 12', 'Secondary School', 'DBT', 'Financial Aid']
+  },
+  {
+    id: 'aicte-pragati-scholarship',
+    name: 'AICTE Pragati Scholarship for Girl Students (Technical Degree & Diploma)',
+    hindiName: 'एआईसीटीई प्रगति छात्रा छात्रवृत्ति योजना',
+    shortName: 'Pragati Girl Scholarship',
+    ministry: 'All India Council for Technical Education (AICTE), Ministry of Education',
+    level: 'Central',
+    category: 'Education',
+    benefitType: 'Scholarship',
+    monetaryValueEstimate: 50000,
+    monetaryValueDisplay: '₹50,000 / year (up to 4 years for Degree / 3 years for Diploma)',
+    sticker: {
+      emoji: '👩‍💻',
+      badge: 'WOMEN IN TECH',
+      title: '₹50,000 / Year Technical Degree Fellowship',
+      tagline: 'Laptops, Tuition & Books for Engineering Girls',
+      theme: 'rose',
+    },
+    description: 'Empowerment scholarship providing substantial financial aid to meritorious young women admitted to first-year or lateral entry technical degree and diploma courses in AICTE-approved colleges.',
+    keyBenefits: [
+      '₹50,000 per annum paid as a lump sum towards college fees, laptop/PC purchase, books, software, and study equipment',
+      'Awarded for the full course duration (4 years for B.Tech/BE degrees, 3 years for Diploma courses)',
+      '10,000 fresh girl students awarded every academic year (5,000 for Degree, 5,000 for Diploma)',
+      'All eligible girl candidates from 13 North-Eastern and Union Territory states/regions receive guaranteed award',
+      'Direct Benefit Transfer (DBT) into the girl student\'s personal bank account'
+    ],
+    targetAudienceText: 'Girl students admitted to AICTE approved technical degree or diploma colleges with family income under ₹8 Lakh (up to 2 girls per family)',
+    eligibilityCriteria: {
+      gender: 'Female',
+      occupations: ['Student'],
+      minAge: 16,
+      maxAge: 26,
+      maxAnnualIncome: 800000
+    },
+    documentsRequired: [
+      { id: '10th-12th-marksheet', name: '10th & 12th / ITI Marksheet', purpose: 'Qualifying exam score verification', issuer: 'Recognized Board', mandatory: true },
+      { id: 'allotment-letter', name: 'Centralized Admission Allotment Letter', purpose: 'Proof of merit admission in AICTE-approved college', issuer: 'State CET / JoSAA / DTE Admission Cell', mandatory: true },
+      { id: 'income-cert', name: 'Parental Annual Income Certificate (< ₹8 Lakh)', purpose: 'Income eligibility verification', issuer: 'Tehsildar / Sub-Divisional Magistrate', mandatory: true },
+      { id: 'bonafide-cert', name: 'Bonafide Certificate & Tuition Fee Receipt', purpose: 'Ongoing enrollment verification', issuer: 'College Principal', mandatory: true }
+    ],
+    applicationMode: 'Online Portal',
+    applicationUrl: 'https://scholarships.gov.in/',
+    disbursalTimeline: 'Annual single-tranche DBT transfer directly into the girl student\'s bank account',
+    processingFee: '₹0 (Free government application)',
+    applicationSteps: [
+      'Take admission in an AICTE-approved institution for a technical degree or diploma course.',
+      'Register on the National Scholarship Portal (scholarships.gov.in) under AICTE Schemes -> Pragati Scholarship.',
+      'Upload centralized admission letter, tuition fee receipt, and family income certificate.',
+      'The institute verification officer verifies credentials online on the NSP portal.',
+      'AICTE reviews merit list and disburses ₹50,000 directly to the student\'s account.'
+    ],
+    commonRejectionReasons: [
+      'Family annual income exceeds ₹8 Lakh.',
+      'Admission taken through management quota instead of centralized merit counseling.',
+      'College or course is not approved by AICTE.',
+      'More than two girl children applying from the same family.'
+    ],
+    tags: ['Education', 'Girls', 'Engineering', 'Diploma', 'Technical Education', 'AICTE', 'Scholarship']
+  },
+  {
+    id: 'pm-yasasvi-scholarship',
+    name: 'PM Young Achievers Scholarship Scheme for Vibrant India (PM YASASVI)',
+    hindiName: 'पीएम यशस्वी छात्रवृत्ति योजना',
+    shortName: 'PM YASASVI Scholarship',
+    ministry: 'Ministry of Social Justice and Empowerment',
+    level: 'Central',
+    category: 'Education',
+    benefitType: 'Scholarship',
+    monetaryValueEstimate: 125000,
+    monetaryValueDisplay: 'Up to ₹1,25,000 / year for School & Full Tuition Fee Waiver in Top Colleges',
+    sticker: {
+      emoji: '🏆',
+      badge: 'TOP CLASS SCHOLARS',
+      title: 'Up to ₹1,25,000/yr & Full College Fee Waiver',
+      tagline: 'OBC, EBC & DNT Meritorious Students in Premier Institutes',
+      theme: 'amber',
+    },
+    description: 'Comprehensive scholarship program empowering meritorious students belonging to Other Backward Classes (OBC), Economically Backward Classes (EBC), and De-notified Nomadic Tribes (DNT) in top schools and premier universities.',
+    keyBenefits: [
+      'School Scheme: ₹75,000 per year for Class 9 & 10; ₹1,25,000 per year for Class 11 & 12 in top-rated schools',
+      'Top Class College Education: 100% full tuition fee reimbursement (up to ₹2 Lakh/year) in IITs, NITs, IIMs, AIIMS & NLUs',
+      'Living expenses allowance of ₹3,000 per month for hosteller college scholars',
+      'One-time grant of ₹45,000 for purchasing a latest laptop/computer and ₹5,000 annual book allowance',
+      'Transparent online selection administered via National Testing Agency (NTA) and NSP'
+    ],
+    targetAudienceText: 'OBC, EBC, and DNT students studying in secondary school or higher education with parental income under ₹2.5 Lakh',
+    eligibilityCriteria: {
+      occupations: ['Student'],
+      socialCategories: ['OBC', 'EWS'],
+      minAge: 13,
+      maxAge: 28,
+      maxAnnualIncome: 250000
+    },
+    documentsRequired: [
+      { id: 'caste-cert', name: 'OBC / EBC / DNT Category Certificate', purpose: 'Community reservation verification', issuer: 'Competent District Magistrate / Tehsildar', mandatory: true },
+      { id: 'income-cert', name: 'Annual Income Certificate (≤ ₹2.5 Lakh)', purpose: 'Income ceiling proof', issuer: 'Revenue Authority', mandatory: true },
+      { id: 'academic-marksheet', name: 'Previous Class Passing Marksheet (≥ 60% marks)', purpose: 'Academic merit verification', issuer: 'School / University', mandatory: true },
+      { id: 'bank-passbook', name: 'Aadhaar-linked Bank Account Passbook', purpose: 'Direct Benefit Transfer (DBT)', issuer: 'Scheduled Bank', mandatory: true }
+    ],
+    applicationMode: 'Online Portal',
+    applicationUrl: 'https://yet.nta.ac.in/',
+    disbursalTimeline: 'Disbursed directly into student account via PFMS in 2 tranches per academic year',
+    processingFee: '₹0 (Free government application)',
+    applicationSteps: [
+      'Visit yet.nta.ac.in or scholarships.gov.in and register under the PM YASASVI Scheme.',
+      'Enter Aadhaar number and verify student identity via OTP.',
+      'Upload caste/community certificate, parental income proof, and previous academic scorecards.',
+      'Select your enrolled school or top-class college from the empanelled institutional roster.',
+      'Submit application for online verification by institute and state welfare department.'
+    ],
+    commonRejectionReasons: [
+      'Parental annual income from all sources exceeds ₹2.5 Lakh.',
+      'Applicant belongs to General category without qualifying as EBC or DNT.',
+      'Enrolled institution is not included in the officially recognized Top Class Institution list.'
+    ],
+    tags: ['Education', 'Scholarship', 'OBC', 'EBC', 'Top Class Education', 'PM YASASVI', 'NTA']
+  },
+  {
+    id: 'pm-vidyalaxmi-loan-subsidy',
+    name: 'PM-Vidyalaxmi & Central Sector Interest Subsidy (CSIS) on Education Loans',
+    hindiName: 'पीएम-विद्यालक्ष्मी एवं केंद्रीय ब्याज सब्सिडी योजना',
+    shortName: 'PM-Vidyalaxmi Subsidy',
+    ministry: 'Department of Higher Education, Ministry of Education',
+    level: 'Central',
+    category: 'Education',
+    benefitType: 'Subsidized Credit / Loan',
+    monetaryValueEstimate: 150000,
+    monetaryValueDisplay: '100% Full Interest Waiver on Education Loans up to ₹10 Lakh',
+    sticker: {
+      emoji: '📜',
+      badge: '100% INTEREST WAIVER',
+      title: 'Full Interest Subsidy on Loans up to ₹10 Lakh',
+      tagline: 'Zero Interest During Entire Degree + 1 Year Grace',
+      theme: 'cyan',
+    },
+    description: 'Central sector interest waiver providing 100% full interest subsidy during the moratorium period (entire course duration plus 1 year) on educational loans for technical and professional higher education in India.',
+    keyBenefits: [
+      'Government of India pays 100% of accumulated loan interest while the student is studying + 1 year grace period',
+      'Covers professional and technical higher education degrees (Engineering, Medical, Law, Management, Architecture, Pharmacy)',
+      'Applicable on educational loans up to ₹10 Lakh without requiring third-party guarantee or collateral security',
+      'Unified single-window digital portal connected to 40+ scheduled commercial banks and regional rural banks',
+      'Saves student families between ₹1,00,000 to ₹2,50,000 in loan interest charges before repayment begins'
+    ],
+    targetAudienceText: 'Students pursuing approved professional/technical higher education in India with annual family income up to ₹4.5 Lakh',
+    eligibilityCriteria: {
+      occupations: ['Student'],
+      minAge: 17,
+      maxAge: 32,
+      maxAnnualIncome: 450000,
+      requiresNonTaxpayer: true
+    },
+    documentsRequired: [
+      { id: 'admission-proof', name: 'College Admission Letter & Course Fee Structure', purpose: 'Verification of professional degree course', issuer: 'Recognized College / University', mandatory: true },
+      { id: 'income-cert', name: 'Income Certificate from Authorized State Authority', purpose: 'Income ceiling (≤ ₹4.5 Lakh) verification for interest waiver', issuer: 'Tehsildar / SDO', mandatory: true },
+      { id: 'loan-sanction', name: 'Bank Education Loan Sanction Letter', purpose: 'Proof of IBA model education loan', issuer: 'Any Scheduled Bank', mandatory: true },
+      { id: 'aadhaar-pan', name: 'Aadhaar & PAN Card of Student & Co-borrower', purpose: 'KYC and credit check', issuer: 'UIDAI & Income Tax Dept', mandatory: true }
+    ],
+    applicationMode: 'Online Portal',
+    applicationUrl: 'https://www.vidyalakshmi.co.in/',
+    disbursalTimeline: 'Interest subsidy credited directly to student loan account by Canara Bank (Nodal Agency)',
+    processingFee: '₹0 (Free portal registration)',
+    applicationSteps: [
+      'Register on the official PM-Vidyalaxmi portal (vidyalakshmi.co.in) with basic student details.',
+      'Fill Common Educational Loan Application Form (CELAF) with course, college, and loan amount details.',
+      'Search and apply to multiple participating banks offering educational loans with CSIS interest subsidy.',
+      'Upload authorized income certificate establishing family income is within ₹4.5 Lakh limit.',
+      'Once loan is sanctioned, the bank flags the account on the Canara Bank subsidy portal for automatic interest reimbursement.'
+    ],
+    commonRejectionReasons: [
+      'Family income exceeds the statutory ceiling of ₹4.5 Lakh per annum at the time of loan sanction.',
+      'Course pursued is non-technical/general arts without AICTE/UGC/MCI professional accreditation.',
+      'Studies conducted abroad (CSIS interest subsidy is applicable solely for studies within India).'
+    ],
+    tags: ['Education Loan', 'Interest Subsidy', 'College', 'Engineering & Medical', 'Higher Studies', 'Vidyalaxmi']
+  },
+  {
+    id: 'aicte-saksham-scholarship',
+    name: 'AICTE Saksham Scholarship for Specially-Abled Students (PwD)',
+    hindiName: 'एआईसीटीई सक्षम दिव्यांग छात्रवृत्ति योजना',
+    shortName: 'Saksham PwD Scholarship',
+    ministry: 'All India Council for Technical Education (AICTE), Ministry of Education',
+    level: 'Central',
+    category: 'Education',
+    benefitType: 'Scholarship',
+    monetaryValueEstimate: 50000,
+    monetaryValueDisplay: '₹50,000 / year throughout Degree/Diploma Duration',
+    sticker: {
+      emoji: '✨',
+      badge: 'BENCHMARK PWD AID',
+      title: '₹50,000 / Year Specially-Abled Tech Award',
+      tagline: 'Full Degree Tenure Support · UDID Certified',
+      theme: 'indigo',
+    },
+    description: 'Dedicated national technical scholarship providing financial encouragement to students with benchmark disabilities (≥ 40%) admitted to AICTE-approved degree or diploma courses across India.',
+    keyBenefits: [
+      '₹50,000 per annum paid towards tuition fees, assistive technologies, accessible devices, books, and conveyance',
+      'Supported for the entire study duration (4 years for technical degree, 3 years for diploma programs)',
+      'All eligible specially-abled candidates who gain admission receive the scholarship (no state quota caps)',
+      'Direct Benefit Transfer (DBT) directly into the student\'s personal savings bank account via PFMS'
+    ],
+    targetAudienceText: 'Differently-abled students (disability >= 40%) enrolled in AICTE-approved technical degree/diploma programs with family income <= ₹8 Lakh',
+    eligibilityCriteria: {
+      occupations: ['Student'],
+      requiresDisability: true,
+      minDisabilityPercentage: 40,
+      minAge: 16,
+      maxAge: 35,
+      maxAnnualIncome: 800000
+    },
+    documentsRequired: [
+      { id: 'disability-cert', name: 'Unique Disability ID (UDID) / Disability Certificate (≥ 40%)', purpose: 'Proof of benchmark disability', issuer: 'District Medical Board / Competent Hospital Authority', mandatory: true },
+      { id: 'admission-letter', name: 'Centralized Technical Admission Allotment Letter', purpose: 'Proof of merit admission in AICTE-approved college', issuer: 'State CET / JoSAA / Central Counseling Cell', mandatory: true },
+      { id: 'income-cert', name: 'Family Income Certificate (< ₹8 Lakh)', purpose: 'Income ceiling proof', issuer: 'Tehsildar / SDO', mandatory: true },
+      { id: 'college-bonafide', name: 'College Bonafide Certificate & Fee Receipt', purpose: 'Proof of active enrollment', issuer: 'College Principal', mandatory: true }
+    ],
+    applicationMode: 'Online Portal',
+    applicationUrl: 'https://scholarships.gov.in/',
+    disbursalTimeline: 'Annual lump sum credited directly into the student\'s bank account upon institute online verification',
+    processingFee: '₹0 (Free government scholarship)',
+    applicationSteps: [
+      'Secure admission in an AICTE-approved technical degree or diploma college.',
+      'Register on the National Scholarship Portal (scholarships.gov.in).',
+      'Select AICTE Schemes -> Saksham Scholarship for Specially-Abled Students.',
+      'Upload UDID disability certificate (with >= 40% benchmark disability), income certificate, and admission fee receipt.',
+      'The college nodal officer verifies documents online, followed by AICTE sanction and DBT credit.'
+    ],
+    commonRejectionReasons: [
+      'Disability percentage is certified below the 40% benchmark threshold.',
+      'Family annual income exceeds ₹8 Lakh per annum.',
+      'Course or institution is not approved by AICTE.'
+    ],
+    tags: ['Education', 'Disability', 'PwD', 'AICTE', 'Technical Degree', 'Scholarship', 'UDID']
   }
 ];
 

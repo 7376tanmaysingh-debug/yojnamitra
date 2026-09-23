@@ -79,7 +79,8 @@ export type BenefitType =
   | 'Scholarship'
   | 'Monthly Pension'
   | 'Free Foodgrains'
-  | 'Skill Certification';
+  | 'Skill Certification'
+  | 'Internship & Stipend';
 
 export interface SchemeEligibilityRules {
   minAge?: number;
@@ -113,6 +114,25 @@ export interface SchemeDocument {
   mandatory: boolean;
 }
 
+export type StickerTheme =
+  | 'emerald'
+  | 'amber'
+  | 'rose'
+  | 'indigo'
+  | 'blue'
+  | 'purple'
+  | 'teal'
+  | 'cyan'
+  | 'orange';
+
+export interface SchemeSticker {
+  emoji: string;
+  badge: string;      // e.g. "TOP 500 CORPORATE", "FREE NSQF BADGE", "100% CASHLESS"
+  title: string;      // e.g. "₹66,000 / yr PM Internship"
+  tagline: string;    // e.g. "₹5,000/mo DBT + ₹6k Relocation Grant"
+  theme: StickerTheme;
+}
+
 export interface Scheme {
   id: string;
   name: string;
@@ -124,6 +144,7 @@ export interface Scheme {
   benefitType: BenefitType;
   monetaryValueEstimate: number; // in INR for aggregate calculation
   monetaryValueDisplay: string;
+  sticker: SchemeSticker;
   description: string;
   keyBenefits: string[];
   eligibilityCriteria: SchemeEligibilityRules;

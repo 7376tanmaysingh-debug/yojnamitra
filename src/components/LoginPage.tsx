@@ -253,7 +253,7 @@ export const LoginPage: React.FC = () => {
               {t.schemeFinder}
             </h1>
             <p className="text-base sm:text-lg font-medium text-emerald-800">
-              Check your eligibility for 20+ government welfare schemes in 1 minute.
+              Check your eligibility for 28+ government schemes (Scholarships, Skill India, Internships, PM-Kisan & more) in 1 minute.
             </p>
           </div>
 
@@ -318,7 +318,7 @@ export const LoginPage: React.FC = () => {
                 <span>1-Click Direct Login (Tanmay Singh)</span>
               </button>
               <p className="text-[11px] text-emerald-100/90 mt-1.5">
-                No typing required — opens full 20+ schemes directory instantly
+                No typing required — opens full 28+ schemes directory instantly
               </p>
             </div>
 

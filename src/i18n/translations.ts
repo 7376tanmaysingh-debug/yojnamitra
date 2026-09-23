@@ -19,12 +19,12 @@ export const TRANSLATIONS = {
     // Brand & General
     appName: 'JanKalyan',
     schemeFinder: 'Scheme Finder',
-    tagline: 'Check statutory eligibility for 20+ Central & State Welfare Programs',
+    tagline: 'Check statutory eligibility for 28+ Central & State Welfare Programs',
     civicPortalTitle: 'Government of India · Citizen Welfare Services',
     civicSubtitle: 'Unified Public Entitlements Gateway',
     securedBadge: '256-Bit TLS Secured Gateway',
     officialPortal: 'Official Welfare & Subsidy Screener',
-    heroDescription: 'Sign in to unlock personalized eligibility screening for 20+ flagship Central & State government schemes, calculate direct financial grants, verify mandatory documents, and access AI welfare policy advice.',
+    heroDescription: 'Sign in to unlock personalized eligibility screening for 28+ flagship schemes across Education, Skill India, Internships, Scholarships, Agriculture, Health & MSME.',
     textSize: 'Text',
     tryPersona: 'Try Persona',
     choosePersona: 'Choose Persona...',
@@ -113,7 +113,7 @@ export const TRANSLATIONS = {
     totalPotential: 'Total Potential Financial Cover',
 
     // Schemes Directory
-    searchPlaceholder: 'Search scheme name, ministry, keyword (e.g. Kisan, Awas, Solar, Loan, Girl child)...',
+    searchPlaceholder: 'Search scheme, scholarship, internship, certificate, skill (e.g. PM Internship, Skill India, NSP, Pragati, Vidyalaxmi)...',
     sortLabel: 'Sort',
     sortHighestMatch: 'Highest Eligibility Match',
     sortHighestValue: 'Highest Financial Entitlement',
