@@ -66,7 +66,7 @@ export const AIAdvisor: React.FC<AIAdvisorProps> = ({ profile, matchedResults })
       const contentType = response.headers.get('content-type') || '';
       let answer = '';
 
-      if (response.ok && contentType.includes('application/json')) {
+      if (contentType.includes('application/json')) {
         try {
           const text = await response.text();
           if (text && text.trim().startsWith('{')) {
